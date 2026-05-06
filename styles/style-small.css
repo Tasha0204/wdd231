@@ -97,20 +97,11 @@ header {
 }
 
 .avatar {
-    width: 80px;
-    height: 141px;
-    box-sizing: border-box;
-    border: 2.5px var(--alice-blue) solid;
-    margin: 1.5rem 0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
-    animation: float 6s ease-in-out infinite;
-    img {
-        width: 100%;
-        height: auto;
-    }
+    width: 100px;  
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 0; 
+    border: 3px solid #fdfefe; 
 }
 
 header h1 {
