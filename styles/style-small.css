@@ -1,5 +1,5 @@
 :root {
-    /* Paleta de Colores Refinada */
+  
     --true-blue: #0466c8;
     --yale-blue: #023e7d;
     --oxford-blue: #002855;
@@ -9,22 +9,20 @@
     --slate-gray: #7d8597;
     --text-main: #33415c;
     
-    /* Tipografía */
+  
     --font-headers: 'Lato', sans-serif;
     --font-body: 'Barlow', sans-serif;
 
-    /* Sombras Modernas (Soft Shadows) */
     --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
     --shadow-btn: 0 4px 15px rgba(4, 102, 200, 0.3);
-    
-    /* Transiciones */
+   
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Base --- */
+
 body {
-    background-color: #f8fafc; /* Fondo suave para que las tarjetas resalten */
+    background-color: #f8fafc; 
     color: var(--text-main);
     font-family: var(--font-body);
     margin: 0;
@@ -33,7 +31,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- Header & Avatar Profesional --- */
+
 header {
     background: linear-gradient(135deg, var(--oxford-blue), var(--oxford-blue-3));
     color: var(--alice-blue);
@@ -65,7 +63,7 @@ header h1 {
     margin: 0;
 }
 
-/* --- Navegación --- */
+
 nav {
     background-color: var(--yale-blue);
     position: sticky;
@@ -93,7 +91,6 @@ nav a {
 nav a:hover { background-color: var(--true-blue); }
 nav a.active { background-color: #fef9d9; color: var(--oxford-blue-3); }
 
-/* --- Botón Hamburguesa (Consolidado) --- */
 #menu {
     display: block;
     font-size: 30px;
@@ -119,7 +116,7 @@ main {
     flex: 1;
 }
 
-/* H1 Invisible para Auditoría */
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -131,7 +128,7 @@ main {
     border: 0;
 }
 
-/* --- Cards Profesionales --- */
+
 main section {
     background: var(--white);
     border-radius: 16px; 
@@ -161,10 +158,16 @@ section h2 {
     border-bottom: 4px solid var(--true-blue);
 }
 
-section ul { padding: 1.5rem 2rem; margin: 0; }
-section li { margin-bottom: 12px; font-size: 0.95rem; }
+section ul { 
+    padding: 1.5rem 2rem;
+    margin: 0; 
+}
+section li {
+     margin-bottom: 12px;
+      font-size: 0.95rem; 
+}
 
-/* Imágenes Consolidadas */
+
 section img {
     width: 85%;
     height: auto;
@@ -174,8 +177,11 @@ section img {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* --- Botones de Cursos Profesionales --- */
-.boxButton { padding-top: 10px; text-align: center; }
+
+.boxButton {
+     padding-top: 10px; 
+     text-align: center;
+ }
 
 .courseButton {
     display: inline-block;
@@ -193,9 +199,12 @@ section img {
     cursor: pointer;
 }
 
-.courseButton:hover { filter: brightness(1.2); transform: translateY(-2px); }
+.courseButton:hover { 
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+ }
 
-/* Estados de los Cursos */
+
 .course {
     display: flex;
     align-items: center;
@@ -208,16 +217,19 @@ section img {
     transition: var(--transition);
 }
 
-.course h3 { margin: 0; font-size: 0.9rem; }
+.course h3 { 
+    margin: 0;
+    font-size: 0.9rem; 
+}
 
 .courseComplete {
-    background: #27ae60; /* Verde profesional */
+    background: #27ae60; 
     color: white;
     border: none;
     box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
 }
 
-/* --- Footer Consolidado --- */
+
 footer {
     background-color: var(--oxford-blue-3);
     color: var(--alice-blue);
@@ -227,9 +239,12 @@ footer {
     margin-top: 3rem;
 }
 
-footer p { margin: 5px 0; padding: 0; }
+footer p { 
+    margin: 5px 0;
+    padding: 0;
+}
 
-/* --- Responsive --- */
+
 @media (max-width: 480px) {
     nav ul { flex-direction: column; }
     main { grid-template-columns: 1fr; }
