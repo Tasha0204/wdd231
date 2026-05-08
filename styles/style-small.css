@@ -63,31 +63,28 @@ header h1 {
 .avatar:hover { transform: scale(1.05); }
 
 
-
 nav {
-    background-color: var(--yale-blue);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #0466c8; 
+    text-align: center;
 }
 
 nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
-
 nav a {
-    color: var(--white); 
-    text-decoration: none;
-    padding: 15px;
+    color: #ffffff; 
+    padding: 15px 25px;
     display: block;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav a:hover { 
-    background-color: var(--true-blue); 
+nav a:hover {
+    background-color: #002855; 
 }
 
 nav a.active { 
@@ -185,25 +182,16 @@ section img {
 }
 
 .courseButton {
-    display: inline-block;
-    background: linear-gradient(145deg, var(--true-blue), var(--yale-blue));
-    color: var(--white);
+    background-color: #0466c8; 
+    color: #ffffff; 
     padding: 10px 20px;
-    margin: 5px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    box-shadow: var(--shadow-btn);
-    transition: var(--transition);
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.courseButton:hover { 
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(4, 102, 200, 0.4);
+.courseButton:hover {
+    background-color: #002855; 
 }
 
 .course {
