@@ -90,8 +90,8 @@ nav a:hover {
 }
 
 nav a.active { 
-    background-color: var(--active-gold); 
-    color: var(--black); 
+    background-color: #ffffff; 
+    color: #0466c8; 
     font-weight: 700;
 }
 
