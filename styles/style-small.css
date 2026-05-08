@@ -76,15 +76,17 @@ nav ul {
     justify-content: center;
 }
 nav a {
+   
     color: #ffffff; 
+    text-decoration: none;
     padding: 15px 25px;
     display: block;
-    text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    background-color: #002855; 
+    background-color: #001233; 
+    color: #ffffff;
 }
 
 nav a.active { 
@@ -183,7 +185,7 @@ section img {
 
 .courseButton {
     background-color: #0466c8; 
-    color: #ffffff; 
+    color: #ffffff;          
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
