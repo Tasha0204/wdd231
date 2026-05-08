@@ -1,5 +1,4 @@
 :root {
-    /* Paleta Principal */
     --true-blue: #0466c8;
     --yale-blue: #023e7d;
     --oxford-blue: #002855;
@@ -9,11 +8,10 @@
     --black: #000000;
     --slate-gray: #7d8597;
     --text-main: #33415c;
-    
-    /* Nuevas variables para estandarización */
+   
     --bg-body: #f8fafc;
-    --success-green: #218c4d; /* Un verde ligeramente más oscuro para mejor contraste */
-    --active-gold: #ffeb3b;   /* Amarillo con mejor visibilidad */
+    --success-green: #218c4d; 
+    --active-gold: #ffeb3b;   
 
     /* Fuentes */
     --font-headers: 'Lato', sans-serif;
@@ -37,36 +35,34 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--oxford-blue), var(--oxford-blue-3));
-    color: var(--white); /* Cambiado a blanco puro para contraste máximo AA */
-    padding: 3rem 1rem;
+   
+    background-color: #002855; 
+    color: #ffffff; 
+    padding: 30px 10px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
 }
 
 .avatar {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    border: 4px solid #0466c8; 
     object-fit: cover;
-    border: 4px solid var(--true-blue);
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
-    transition: var(--transition);
 }
 
 .avatar:hover { transform: scale(1.05); }
 
-header h1 {
-    font-family: var(--font-headers);
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Mejora legibilidad */
-}
+
 
 nav {
     background-color: var(--yale-blue);
@@ -84,12 +80,10 @@ nav ul {
 }
 
 nav a {
-    display: block;
-    padding: 1.1rem 1.5rem;
-    color: var(--white); /* Mejorado de alice-blue a white */
+    color: var(--white); 
     text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
+    padding: 15px;
+    display: block;
 }
 
 nav a:hover { 
@@ -98,7 +92,7 @@ nav a:hover {
 
 nav a.active { 
     background-color: var(--active-gold); 
-    color: var(--black); /* Contraste perfecto para el elemento activo */
+    color: var(--black); 
     font-weight: 700;
 }
 
