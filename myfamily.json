@@ -1,0 +1,33 @@
+{
+  "apellido": "Vidal",
+  "fecha_mudanza": "2024-08-15",
+  "numero_personas": 7,
+  "visitado_por_obispado": true,
+  "miembros_familia": [
+    {
+      "nombre": "Juan",
+      "genero": "Masculino",
+      "fecha_nacimiento": "2009-05-10"
+    },
+    {
+      "nombre": "Mía",
+      "genero": "Femenino",
+      "fecha_nacimiento": "2009-05-10"
+    },
+    {
+      "nombre": "Bruno",
+      "genero": "Masculino",
+      "fecha_nacimiento": "2010-11-20"
+    },
+    {
+      "nombre": "Matías",
+      "genero": "Masculino",
+      "fecha_nacimiento": "2021-03-15"
+    },
+    {
+      "nombre": "JunWen",
+      "genero": "Masculino",
+      "fecha_nacimiento": "2025-10-01"
+    }
+  ]
+}
