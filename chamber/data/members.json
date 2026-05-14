@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Innovación Digital S.A.",
+    "address": "Av. Larco 123, Miraflores",
+    "phone": "+51 1 444 5566",
+    "website": "https://innovacion.pe",
+    "image": "innovacion_logo.png",
+    "membershipLevel": 3,
+    "otherInfo": "Expertos en desarrollo web y SEO."
+  },
+  {
+    "name": "Andina Tech",
+    "address": "Calle Lima 456, Cusco",
+    "phone": "+51 84 223 344",
+    "website": "https://andinatech.pe",
+    "image": "andina_logo.png",
+    "membershipLevel": 2,
+    "otherInfo": "Soluciones de software a medida."
+  }
+]
