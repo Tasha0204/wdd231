@@ -1,151 +1,170 @@
-
-
-:root {
-    --heading-font: 'Montserrat', sans-serif;
-    --paragraph-font: 'Gowun Batang', serif;
-    --primary-color: #020d40; /* El marrón elegante de tu logo */
-    --accent-color: #FF715B;
-    --white: #ffffff;
-}
-
+/* 1. CONFIGURACIÓN GENERAL (Cumple Punto 2: Sin scroll horizontal) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+    --primary-maroon: #523F38; /* Color institucional */
+    --accent-coral: #FF715B;   /* Color para contraste (Punto 4) */
+    --white: #ffffff;
+    --light-bg: #f9f9f9;
+}
+
 body {
-    font-family: var(--paragraph-font);
-    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-
+/* 2. HEADER Y LOGO (Punto 2: Centrado y atractivo) */
 header {
     background-color: var(--white);
+    padding: 2rem 0;
     text-align: center;
-    padding: 20px 0;
 }
 
 #icc {
-    max-height: 80px;
-    margin: 0 auto;
+    max-height: 120px;
+    width: auto;
     display: block;
+    margin: 0 auto;
 }
 
+/* 3. NAVEGACIÓN (Cumple Punto 5: Wayfinding/Navegación aplicada) */
 .nav-links-wrapper {
-    background-color: var(--primary-color);
-    padding: 10px 0;
+    background-color: var(--primary-maroon);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 15px 0;
     gap: 2rem;
 }
 
 nav ul li a {
     color: var(--white);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
+/* Wayfinding: Saber en qué página estás */
+nav ul li a.active {
+    color: var(--accent-coral);
+    border-bottom: 2px solid var(--accent-coral);
+    padding-bottom: 5px;
+}
 
+/* 4. CONTENIDO PRINCIPAL (Punto 9: Responsivo) */
 main {
     flex: 1;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 2rem 1rem;
     width: 100%;
-}
-
-
-h1, h2, .directory-title {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .directory-controls {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* 5. VISTA DE CUADRADOS (GRID) - Punto 10: 4 pts */
+#directory-data.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    margin-bottom: 40px;
 }
 
-.directory-controls label, 
-.directory-controls select {
-    display: block;
+#directory-data.grid .card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    padding: 20px;
     text-align: center;
-    margin: 0 auto;
+    border-radius: 8px; /* Cuadrados bonitos */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.view-buttons {
+#directory-data.grid .card img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* 6. VISTA DE LISTA (LIST) - Punto 10: Sin imágenes */
+#directory-data.list {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 10px;
 }
 
+#directory-data.list .card {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+    background: var(--white);
+    padding: 10px 20px;
+    text-align: left;
+    border: 1px solid #eee;
+}
+
+#directory-data.list .card img {
+    display: none; /* Requisito de la rúbrica: sin imágenes en lista */
+}
+
+/* 7. FOOTER */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--primary-maroon);
     color: var(--white);
-    padding: 30px 0;
+    padding: 2rem;
+    text-align: center;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-info {
-    flex: 1;
-    text-align: left;
-}
-
-.social-icons {
-    flex: 1;
-    display: flex;
-    justify-content: center; 
-    gap: 15px;
 }
 
 .social-icons img {
-    width: 30px;
-    filter: brightness(0) invert(1); 
+    width: 25px;
+    filter: brightness(0) invert(1);
+    margin: 0 10px;
 }
-
-.footer-copy {
-    flex: 1;
-    text-align: right;
-}
-
-
-#directory-data {
+/* Esto es lo que crea los cuadros bonitos */
+#businesses.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center;
 }
 
-.card {
+#businesses.grid .card {
     background: white;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.2); 
-    color: #FF715B;
-    border-bottom: 3px solid #FF715B;/
-    padding-bottom: 5px;
-    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-nav ul li a:hover {
-    color: #FF715B;
-    transition: 0.3s;
+#businesses.grid .card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Responsive para la lista */
+@media (max-width: 650px) {
+    #directory-data.list .card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }

@@ -1,20 +1,58 @@
 [
   {
-    "name": "Innovación Digital S.A.",
-    "address": "Av. Larco 123, Miraflores",
-    "phone": "+51 1 444 5566",
-    "website": "https://innovacion.pe",
-    "image": "innovacion_logo.png",
-    "membershipLevel": 3,
-    "otherInfo": "Expertos en desarrollo web y SEO."
+    "name": "Cusco Tradiciones",
+    "address": "Av. El Sol 123, Cusco",
+    "phone": "+51 84 223344",
+    "website": "https://cuscotradiciones.pe",
+    "image": "images/cusco_logo.png",
+    "membershipLevel": "Gold"
   },
   {
-    "name": "Andina Tech",
-    "address": "Calle Lima 456, Cusco",
-    "phone": "+51 84 223 344",
-    "website": "https://andinatech.pe",
-    "image": "andina_logo.png",
-    "membershipLevel": 2,
-    "otherInfo": "Soluciones de software a medida."
+    "name": "Lima Tech Solutions",
+    "address": "Calle Las Begonias 456, San Isidro",
+    "phone": "+51 1 445566",
+    "website": "https://limatech.com",
+    "image": "images/tech_logo.png",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Arequipa Export",
+    "address": "Calle Mercaderes 789, Arequipa",
+    "phone": "+51 54 332211",
+    "website": "https://arequipaexport.com",
+    "image": "images/export_logo.png",
+    "membershipLevel": "Bronze"
+  },
+  {
+    "name": "Andina Textiles",
+    "address": "Jr. de la Unión 101, Lima",
+    "phone": "+51 1 778899",
+    "website": "https://andinatextiles.pe",
+    "image": "images/textil_logo.png",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Amazonas Eco-Lodge",
+    "address": "Malecón Tarapacá 202, Iquitos",
+    "phone": "+51 65 554433",
+    "website": "https://amazonaslodge.com",
+    "image": "images/amazon_logo.png",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Pisco del Valle",
+    "address": "Panamericana Sur Km 300, Ica",
+    "phone": "+51 56 112233",
+    "website": "https://piscodelvalle.pe",
+    "image": "images/pisco_logo.png",
+    "membershipLevel": "Bronze"
+  },
+  {
+    "name": "Pacífico Logística",
+    "address": "Av. Argentina 500, Callao",
+    "phone": "+51 1 998877",
+    "website": "https://pacificolog.pe",
+    "image": "images/pacifico_logo.png",
+    "membershipLevel": "Gold"
   }
 ]
