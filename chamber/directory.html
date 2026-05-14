@@ -5,25 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | PERU Chamber of Commerce</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat+Alternates:wght@100;400;700&display=swap" rel="stylesheet">
     
     <meta name="description" content="Peru Chamber of Commerce | WDD 231 | Web Frontend Development I | TASHA VIDAL">
     <meta name="author" content="TASHA VIDAL">
+    
     <meta property="og:type" content="website">
     <meta property="og:title" content="PERU Chamber of Commerce">
-    <meta property="og:description" content="PERU Chamber of Commerce is a webpage for local business connecting consumers to the province's top local products and services!">
+    <meta property="og:description" content="Connecting consumers to the province's top local products and services!">
     <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/machu.webp">
-    <meta property="og:image:alt" content="Machu Picchu: Hero image of Peru Chamber of Commerce Business Directory Page">
-    <meta property="og:image:width" content="1400">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/">
+    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/directory.html">
 
     <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
 
     <script src="scripts/directory.js" type="module"></script>
 </head>
@@ -31,72 +30,68 @@
 <body>
     <header>
         <div class="nav-links-wrapper full-width">
-            <a href="https://tasha0204.github.io/wdd231/chamber/index.html">
-                <img id="icc" src="images/peru.png" alt="Peru Chamber of Commerce" width="40" height="40">
+            <a href="index.html">
+                <img id="icc" src="images/peru.png" alt="Peru Chamber of Commerce Logo" width="150" height="auto">
             </a>
 
             <nav class="menuLinks">
-                <span id="data"></span>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/wdd231/chamber/directory.html">Directory</a></li>
-                    <li><a href="/wdd231/chamber/join.html">Join</a></li>
-                    <li><a href="/wdd231/chamber/discover.html">Discover</a></li>
+                <ul id="primaryNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                 </ul>
             </nav>
-            <button id="menu" aria-label="menu"></button>
+            <button id="menu" aria-label="Open Menu"><span>&#9776;</span><span>X</span></button>
         </div>
 
         <div class="hero-container">
-            <div class="hero">
-                <picture>
-                    <source media="(max-width: 680px)" srcset="images/hero.webp">
-                    <img src="images/machu.webp" width="1600" height="350" alt="Machu Picchu Hero image">
-                </picture>
-            </div>
+            <picture>
+                <source media="(max-width: 680px)" srcset="images/hero.webp">
+                <img src="images/machu.webp" width="1600" height="350" alt="Machu Picchu View">
+            </picture>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <!-- El H1 debe estar dentro del MAIN según el validador -->
-            <h1>Business Directory</h1>
-            <hr>
-            
+        <h1>Business Directory</h1>
+        <hr>
+        
+        <div class="directory-controls">
             <h2>Find a chamber member</h2>
-            <label for="dynamic-businesses">Select a category:</label>
-            <select name="dynamic-businesses" id="dynamic-businesses">
-                <option value="" id="select">Select</option>
-            </select>
+            <label for="dynamic-businesses">Filter by Category:</label>
+            <select id="dynamic-businesses">
+                <option value="">All Categories</option>
+                </select>
 
-            <div class="layout">
-                <button id="grid"><img src="images/grid.png" alt="grid layout" width="30" height="30"></button>
-                <button id="list"><img src="images/list.png" alt="list layout" width="20" height="20"></button>
+            <div class="layout-buttons">
+                <button id="grid" title="Grid View">Grid</button>
+                <button id="list" title="List View">List</button>
             </div>
+        </div>
 
-            <div id="businesses"></div>
-        </div>
+        <div id="businesses" class="grid"></div>
     </main>
-   <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>PERU Chamber of Commerce</p>
-            <p>info@icc.com.ph</p>
-             <p>PERU, LIMA City</p>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>PERU Chamber of Commerce</h3>
+                <p>info@icc.com.ph</p>
+                <p>Lima, Peru</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy;<span id="currentyear"></span> | Tasha Vidal | WDD 231</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
-        </div>
-        
-        <div class="footer-copy">
-             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-            <p>Lima, Peru</p>
-            <p>Last Update: <span id="lastModified"></span></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

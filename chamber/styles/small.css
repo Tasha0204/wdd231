@@ -1,9 +1,9 @@
-/* 1. CONFIGURACIÓN GENERAL (Cumple Punto 2: Sin scroll horizontal) */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --primary-maroon: #523F38; /* Color institucional */
-    --accent-coral: #FF715B;   /* Color para contraste (Punto 4) */
+    --primary-maroon: #523F38; 
+    --accent-coral: #FF715B;   
     --white: #ffffff;
     --light-bg: #f9f9f9;
 }
@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 
-/* 2. HEADER Y LOGO (Punto 2: Centrado y atractivo) */
+
 header {
     background-color: var(--white);
     padding: 2rem 0;
@@ -30,7 +30,7 @@ header {
     margin: 0 auto;
 }
 
-/* 3. NAVEGACIÓN (Cumple Punto 5: Wayfinding/Navegación aplicada) */
+
 .nav-links-wrapper {
     background-color: var(--primary-maroon);
 }
@@ -49,14 +49,14 @@ nav ul li a {
     font-weight: 600;
 }
 
-/* Wayfinding: Saber en qué página estás */
+
 nav ul li a.active {
     color: var(--accent-coral);
     border-bottom: 2px solid var(--accent-coral);
     padding-bottom: 5px;
 }
 
-/* 4. CONTENIDO PRINCIPAL (Punto 9: Responsivo) */
+
 main {
     flex: 1;
     max-width: 1000px;
@@ -73,7 +73,7 @@ main {
     margin-bottom: 2rem;
 }
 
-/* 5. VISTA DE CUADRADOS (GRID) - Punto 10: 4 pts */
+
 #directory-data.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -85,7 +85,7 @@ main {
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
-    border-radius: 8px; /* Cuadrados bonitos */
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
@@ -96,7 +96,7 @@ main {
     display: block;
 }
 
-/* 6. VISTA DE LISTA (LIST) - Punto 10: Sin imágenes */
+
 #directory-data.list {
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@ main {
 }
 
 #directory-data.list .card img {
-    display: none; /* Requisito de la rúbrica: sin imágenes en lista */
+    display: none; 
 }
 
 /* 7. FOOTER */
@@ -138,7 +138,7 @@ footer {
     filter: brightness(0) invert(1);
     margin: 0 10px;
 }
-/* Esto es lo que crea los cuadros bonitos */
+
 #businesses.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -161,7 +161,26 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Responsive para la lista */
+#menu span:nth-child(2) {
+    display: none; 
+}
+
+
+#menu.open span:nth-child(1) {
+    display: none;
+}
+
+#menu.open span:nth-child(2) {
+    display: inline;
+}
+
+
+@media (min-width: 680px) {
+    #menu {
+        display: none;
+    }
+}
+
 @media (max-width: 650px) {
     #directory-data.list .card {
         grid-template-columns: 1fr;
