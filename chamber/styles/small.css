@@ -1,948 +1,161 @@
-/* Mobile view */
-@media (max-width: 774px) {
-    /* ================= MEMBERSHIP CARDS ================= */
-    /* Add CSS styling and animation here for the membership cards */
-
-    /* Style */
-
-    .wrapper {
-        background-color: bisque;
-        border: 1px solid black;
-        border-radius: 5px;
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    main,
-    .container {
-        /* display: block; */
-        margin: 0;
-        padding: 0;
-        max-width: 100vw;
-        width: 100%;
-    }
 
 
+:root {
+    --heading-font: 'Montserrat', sans-serif;
+    --paragraph-font: 'Gowun Batang', serif;
+    --primary-color: #020d40; /* El marrón elegante de tu logo */
+    --accent-color: #FF715B;
+    --white: #ffffff;
+}
 
-    .sidebars {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        max-width: 100vw;
-        width: 100%;
-        margin: 0 auto;
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    }
-
-
-
+body {
+    font-family: var(--paragraph-font);
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
-/* Mobile view*/
-@media (max-width: 1060px) {
-
-
-    .membership-cards {
-        align-content: center;
-        align-items: center;
-        background-color: var(--light-silver);
-        border-radius: 4px;
-        display: flex;
-        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-        flex-direction: column;
-        align-self: self-start;
-        gap: 10px;
-        margin-top: 30px;
-        height: auto;
-        width: 100%;
-        max-width: 100vw;
-
-
-    }
-
-
-
-    .membership-cards h3 {
-        color: var(--accent1-color);
-        font-family: var(--paragraph-font);
-        font-size: 2rem;
-
-
-    }
-
-
-    .membership-btns {
-
-        border-radius: 5px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        height: 44px;
-        font-family: var(--default-font);
-
-        width: 80%;
-
-    }
-
-    .membership-btns:hover {
-        background-color: var(--accent1-color);
-        border-radius: 5px;
-        border: 1px solid var(--accent1-color);
-        color: #fff;
-        height: 44px;
-        font-family: var(--default-font);
-        transition: background-color 0.1s ease-in;
-        width: 80%;
-    }
-
-    /* Membership levels */
-
-    .non-profit {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 2px solid var(--accent1-color);
-        border-radius: 8px;
-        height: 150px;
-        /* grid-column: 1; */
-        justify-content: center;
-        margin: 0 auto;
-        width: 90%;
-
-
-    }
-
-    .bronze {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 3px solid var(--light-bronze);
-        border-radius: 8px;
-        height: 150px;
-        justify-content: center;
-        margin: 0 auto;
-        width: 90%;
-
-
-    }
-
-    .silver {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 3px solid var(--light-silver);
-        border-radius: 8px;
-        height: 150px;
-        justify-content: center;
-        margin: 0 auto;
-        width: 90%;
-    }
-
-    .gold {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 3px solid var(--light-gold);
-        border-radius: 8px;
-        height: 150px;
-        justify-content: center;
-        margin: 0 auto;
-        width: 90%;
-    }
-
-    .join-wrapper {
-        display: flex;
-        flex-direction: column;
-        max-width: 100vw;
-        width: 100%;
-    }
-
-    .join-form {
-        max-width: 100vw;
-        width: 100%;
-    }
-
-
-    h2 {
-        margin: 0;
-    }
-
-    /* Start image animation here*/
-    .img-discover {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    /* Add pulsating effect for image, as if it is loading on slower networks (e.g., 3G, Slow 4G or Fast 4G */
-
-    .blurry::before {
-
-        content: "";
-        position: absolute;
-        inset: 0;
-        /* set all sides to 0 */
-        animation: pulse 2.5s infinite;
-
-
-    }
-
-    /* When image is already loaded, then remove the white pulsating background caused by animation above*/
-
-    .blurry.loaded::before {
-        content: none;
-
-    }
-
-    @keyframes pulse {
-        0% {
-
-            background-color: rgba(255, 255, 255, 0);
-        }
-
-        50% {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        100% {
-            background-color: rgba(255, 255, 255, 0);
-        }
-
-    }
-
-    .blurry {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-
-    }
-
-    .blurry.loaded>img {
-        opacity: 1;
-    }
-
-    /* Set all images to opacity 0 so it doesn't show the image yet */
-    .blurry>img {
-        opacity: 0;
-
-        transition: opacity 200ms ease-in-out;
-    }
-
-
-    /* End of image animation, a.k.a lazy loading */
-
-    #weather-icon {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto;
-    }
-
-    #city-image {
-        width: 90%;
-        height: auto;
-    }
-
-    .weatherdata-container {
-        margin: 0 auto;
-        max-width: 100vw;
-        width: 100%;
-        height: auto;
-    }
-
-    .membership-cards h2 {
-        color: var(--accent1-color);
-        font-family: var(--default-font);
-        font-size: 2rem;
-        /* grid-column: 1 / span 2; */
-        text-align: center;
-    }
-
-    .membership-cards h3 {
-        color: #000;
-        font-family: var(--paragraph-font);
-        font-size: 2rem;
-
-
-    }
-
-
-
-    /* ================= MODAL ================= */
-
-    .modal {
-        width: 250px;
-    }
-
-    .modal-content h2 {
-        font-size: 2rem;
-    }
-
-    .modal-content ul {
-        font-size: 0.9rem;
-    }
-
-    /* ================= HEADER ================= */
-
-    .hero {
-        padding-bottom: 4rem;
-    }
-
-    .hero img {
-        max-width: 100vw;
-        height: auto;
-
-    }
-
-    #icc {
-        /* display: block; */
-
-        margin: 5px auto;
-    }
-
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-
-
-
-
-
-    /* ================= CONTAINER ================= */
-
-    div.container {
-        align-self: center;
-        margin-left: 50px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        flex-wrap: nowrap;
-        max-width: 100vw;
-        width: 100%;
-    }
-
-    main {
-        max-width: 100vw;
-        width: 100%;
-    }
-
-    div.container-discover {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        max-width: 100vw;
-        width: 100%;
-
-    }
-
-    div.container {
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        max-width: 100vw;
-        width: 100%;
-
-
-
-    }
-
-    div.container a {
-        display: flex;
-        align-items: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    div.container p {
-        text-align: center;
-        align-items: center;
-        padding-top: 0;
-    }
-
-
-
-    .featured-members {
-        display: flex;
-        flex-direction: column;
-        max-width: 100vw;
-        width: 100%;
-
-
-    }
-
-    .featured-businesses {
-        display: flex;
-        flex-direction: column;
-        max-width: 100vw;
-
-        width: 100%;
-        margin: 0 auto;
-
-
-    }
-
-    .join-wrapper {
-        display: flex;
-        flex-direction: column;
-        /* display: grid; */
-        /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-        margin: 0 auto;
-        max-width: 100vw;
-        width: 100%;
-    }
-
-
-
-    .join-form {
-        max-width: 100vw;
-        width: 100%;
-    }
-
-
-    main {
-        align-content: center;
-        align-items: center;
-        background-color: var(--base-color);
-        justify-content: center;
-        padding: 0;
-        max-width: 100vw;
-        width: 100%;
-    }
-
-    .keyevent {
-
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        max-width: 100vw;
-        width: 100%;
-        gap: 10px;
-
-    }
-
-    .keyevent p {
-
-        font-size: 2.5rem;
-        max-width: 70vw;
-        width: 70%;
-        padding: 10px;
-        text-align: left;
-
-
-    }
-
-
-    .cta-btn.open {
-        display: block;
-    }
-
-    #business-img {
-        align-content: center;
-        align-items: center;
-        display: flex;
-        margin: 0 auto;
-        padding: 5px;
-
-    }
-
-    #dynamic-businesses {
-
-        align-items: center;
-        border-radius: 4px;
-        font-family: var(--default-font);
-        font-size: 0.9rem;
-        justify-content: center;
-        height: 2.5rem;
-        margin-top: 2rem;
-        margin: 0 auto;
-        max-width: 50%;
-        padding-right: 2rem;
-        text-align: left;
-
-    }
-
-    span.business-labels {
-
-        font-size: 0.8rem;
-        margin: 0;
-        padding: 0.7rem 0.1rem;
-
-    }
-
-
-    .nav-links-wrapper {
-        align-content: center;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 100vw;
-        width: 100%;
-
-
-    }
-
-    .menuLinks {
-        padding: 0 1.2rem;
-        max-width: 100%;
-    }
-
-    .nav-links-wrapper,
-    .menuLinks ul {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    nav.menuLinks ul {
-        overflow: hidden;
-    }
-
-
-    nav.menuLinks.open {
-        grid-template-rows: 1fr;
-    }
-
-
-    .nav-links-wrapper img {
-        height: auto;
-        width: 4rem;
-        margin: 2rem auto;
-    }
-
-
-
-    div.businesses {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-        margin: 0;
-        max-width: 100vw;
-
-    }
-
-
-    .subcontainer {
-        display: flex;
-        flex-direction: column;
-        max-width: 100vw;
-
-    }
-
-
-
-
-
-    /* ================= FOOTER ================= */
-
-    .left-footer {
-        margin-top: 20px;
-    }
-
-    footer.bottom-details p,
-    a {
-        color: #fff;
-        font-size: 0.8rem;
-        padding: 0.2rem;
-        /* margin: 5px; */
-        max-width: 100vw;
-        /* width: 100%; */
-    }
-
-    .bottom-details p {
-        color: #fff;
-        font-family: var(--default-font);
-
-    }
-
-    .bottom-details {
-
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        gap: 2rem;
-    }
-
-
-    .horizontal {
-        display: none;
-    }
+header {
+    background-color: var(--white);
+    text-align: center;
+    padding: 20px 0;
 }
 
-/* Mobile view 2 */
-
-@media (max-width: 403px) {
-
-    #chamber-meeting {
-        /* This ensures that chamber meeting image is within it's own frame */
-        max-width: 50vw;
-        height: auto;
-    }
-
-
-    #city-image {
-        width: 90%;
-        height: auto;
-    }
-
-    .weatherdata-container {
-        margin: 0 auto;
-        max-width: 100vw;
-        width: 100%;
-        height: auto;
-    }
-
-    .modal-content h2 {
-        color: var(--accent1-color);
-        font-family: var(--default-font);
-        font-size: 1.2rem;
-        /* grid-column: 1 / span 2; */
-        text-align: center;
-
-    }
-
-
-
-
-
+#icc {
+    max-height: 80px;
+    margin: 0 auto;
+    display: block;
 }
 
-@media (max-width: 616px) {
-
-    #menu {
-
-        background: none;
-        border: none;
-        color: var(--base-color);
-        cursor: pointer;
-        display: block;
-        font-size: 2rem;
-        font-family: var(--default-font);
-        padding: .2rem 2vw;
-        position: absolute;
-        right: 30px;
-        top: 8px;
-        /* width: 100%; */
-        text-align: right;
-
-    }
-
-
-    #menu::before {
-        /* content: "☰"; */
-        content: '\2630'
-            /* When menu is closed, display the hamburger icon */
-
-    }
-
-    #menu.open::before {
-        content: "X";
-        /* When menus is opened, display the 'X' button to close the menu */
-
-    }
-
-    .menuLinks {
-        display: none;
-    }
-
-    .menuLinks.open {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .menuLinks.scroll a {
-        background-color: white;
-        animation: changeBackground 3s alternate;
-
-    }
-
-    @keyframes changeBackground {
-        0% {
-            background-color: rgba(255, 255, 255, 1);
-            transition: background-color 0.3s ease-out;
-
-        }
-
-        50% {
-            background-color: rgba(255, 255, 255, 0);
-            transition: background-color 0.5s ease-in;
-
-        }
-
-        100% {
-            background-color: rgba(255, 255, 255, 1);
-            transition: background-color 0.3s ease-out;
-
-        }
-
-    }
-
-    nav.menuLinks li a {
-        font-size: small;
-    }
-
-
-
-
-    #menu::before {
-        /* content: "☰"; */
-        content: '\2630';
-        /* When menu is closed, display the hamburger icon */
-
-    }
-
-    #menu.open::before {
-        content: "X";
-        /* When menus is opened, display the 'X' button to close the menu */
-
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .discover-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        margin: 0 auto;
-        max-width: 100vw;
-        width: 90%;
-    }
-
-    div.container-discover p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    div.container-discover h2 {
-        font-size: 1.8rem;
-
-    }
-
-
-    figure {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        gap: 10px;
-        margin: 20px;
-        width: 100%;
-    }
-
-    figure h2 {
-        font-size: 1.2rem;
-    }
-
-    figcaption {
-        text-align: center;
-        font-size: small;
-        width: 100%;
-    }
-
-
-    figure img {
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        height: auto;
-    }
-
-    figcaption {
-        text-align: center;
-        font-size: 0.9rem;
-        width: 100%;
-    }
-
-
-    figure img {
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        height: auto;
-    }
-
-    article {
-        max-width: 90vw;
-        width: 90%;
-    }
-
-    article p {
-        font-family: var(--default-font);
-        text-align: left;
-    }
-
-    main,
-    .container {
-        /* display: block; */
-        margin: 0;
-        padding: 0;
-        max-width: 100vw;
-        width: 100%;
-    }
-
-
-    fieldset {
-        display: flex;
-        align-items: self-start;
-        max-width: 80vw;
-        width: 80%;
-
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
-        width: 500px;
-        max-width: 80vw;
-        /* margin: 0 auto; */
-    }
-
-
-    fieldset label {
-        padding-left: 20px;
-    }
-
-
-
-
+.nav-links-wrapper {
+    background-color: var(--primary-color);
+    padding: 10px 0;
 }
 
-/* Mobile view 3 */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
 
-@media (max-width: 230px) {
-
-
-    #dynamic-businesses {
-
-
-        font-size: 0.8rem;
-    }
-
-    .nav-links-wrapper>img {
-        width: 30px;
-        height: 30px;
-    }
-
-    #icc {
-        /* display: block; */
-
-        margin: 5px auto;
-    }
-
-    hero {
-        position: relative;
-        display: inline-block;
-
-    }
-
-    .hero-img {
-        display: block;
-    }
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
+main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
 
 
-    .hero {
-        padding-top: 1.2rem;
-    }
+h1, h2, .directory-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    div.businesses {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-        margin: 0;
-        max-width: 100vw;
+.directory-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    margin-bottom: 40px;
+}
 
-    }
+/* Centrado del selector de categoría */
+.directory-controls label, 
+.directory-controls select {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
 
+.view-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-    div.container a {
-        display: flex;
-        align-items: center;
-        align-items: center;
-        justify-content: center;
-        /* margin: 10px; */
-    }
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 30px 0;
+}
 
-    div.container p {
-        margin-bottom: 20px;
-    }
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
 
-    h1 {
-        font-size: 1.3rem;
-    }
+.social-icons {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+}
 
-    .nav-links-wrapper,
-    .menuLinks ul {
-        display: flex;
-        flex-direction: column;
-    }
+.social-icons img {
+    width: 30px;
+    filter: brightness(0) invert(1); 
+}
 
-    nav.menuLinks {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.5s ease-in-out;
-    }
-
-    nav.menuLinks ul {
-        overflow: hidden;
-    }
-
-
-    nav.menuLinks.open {
-        grid-template-rows: 1fr;
-    }
-
-
-
-    footer.bottom-details p,
-    a {
-        color: #fff;
-        /* padding: 5px; */
-        font-size: 0.6rem;
-    }
-
-    .bottom-details {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    .horizontal {
-        display: none;
-    }
+.footer-copy {
+    flex: 1;
+    text-align: right;
+}
 
 
+#directory-data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #FF715B;
+    border-bottom: 3px solid #FF715B;/
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #FF715B;
+    transition: 0.3s;
+}
+#icc {
+   
+    max-height: 300px; 
+    width: auto; 
+
+    display: block;
+    margin: 0 auto 15px auto; 
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
