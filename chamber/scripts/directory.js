@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showHideHamburger();
     getDateTimeInfo();
     windowScroll();
-    
-    // Cargamos los datos apenas abre la página
     fetchMembersData();
 });
 
@@ -16,11 +14,9 @@ async function fetchMembersData() {
     try {
         const response = await fetch('data/members.json');
         const members = await response.json();
-        
-        // 1. Llenamos el select para que no esté vacío
+ 
         populateSelect(members);
         
-        // 2. Mostramos todos los miembros al inicio
         displayMembers(members);
         
     } catch (error) {
@@ -30,7 +26,7 @@ async function fetchMembersData() {
 
 // Función para llenar el select con categorías únicas
 function populateSelect(members) {
-    // Obtenemos categorías únicas (asegúrate que tu JSON tenga el campo "membershipLevel")
+   
     const categories = [...new Set(members.map(m => m.membershipLevel))];
     
     categories.forEach(cat => {
@@ -41,15 +37,13 @@ function populateSelect(members) {
     });
 }
 
-// Función para dibujar las tarjetas
+
 function displayMembers(members) {
-    businessesContainer.innerHTML = ''; // Limpiamos
+    businessesContainer.innerHTML = ''; 
 
     members.forEach(member => {
         const card = document.createElement('section');
-        card.className = 'card'; // Esta clase es la que tus "cuadrados" necesitan
-
-        // Usamos los nombres exactos de tu JSON (nombre, dirección, etc.)
+        card.className = 'card'; 
         card.innerHTML = `
             <img src="${member.image}" alt="Logo de ${member.name}" loading="lazy">
             <h3>${member.name}</h3>
@@ -62,7 +56,7 @@ function displayMembers(members) {
     });
 }
 
-// --- BOTONES GRID Y LIST ---
+
 document.querySelector('#grid').addEventListener('click', () => {
     businessesContainer.classList.add('grid');
     businessesContainer.classList.remove('list');
@@ -73,7 +67,6 @@ document.querySelector('#list').addEventListener('click', () => {
     businessesContainer.classList.remove('grid');
 });
 
-// --- FILTRO DEL SELECT ---
 dynamicSelector.addEventListener('change', async (e) => {
     const response = await fetch('data/members.json');
     const members = await response.json();

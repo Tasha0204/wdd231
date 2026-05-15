@@ -1,58 +1,58 @@
 [
   {
-    "name": "Cusco Tradiciones",
+    "name": "illa kutur",
     "address": "Av. El Sol 123, Cusco",
-    "phone": "+51 84 223344",
-    "website": "https://cuscotradiciones.pe",
-    "image": "images/cusco_logo.png",
+    "phone": "+51 925 393 116",
+    "website":"https://cuscotradiciones.pe",
+    "image": "images/illatours.png",
     "membershipLevel": "Gold"
   },
   {
     "name": "Lima Tech Solutions",
     "address": "Calle Las Begonias 456, San Isidro",
     "phone": "+51 1 445566",
-    "website": "https://limatech.com",
-    "image": "images/tech_logo.png",
+    "website":"https://www.limatech.us/",
+    "image": "images/limatech.png",
     "membershipLevel": "Silver"
   },
   {
     "name": "Arequipa Export",
     "address": "Calle Mercaderes 789, Arequipa",
-    "phone": "+51 54 332211",
-    "website": "https://arequipaexport.com",
-    "image": "images/export_logo.png",
+    "phone": "+51 940187145",
+    "website": "https://www.arequipatoursagencia.com/",
+    "image": "images/arequipa.png",
     "membershipLevel": "Bronze"
   },
   {
     "name": "Andina Textiles",
-    "address": "Jr. de la Unión 101, Lima",
-    "phone": "+51 1 778899",
+    "address": "Jr. Sebastián Barranca 1412, Lima 15018",
+    "phone": "+51 933 149 487",
     "website": "https://andinatextiles.pe",
-    "image": "images/textil_logo.png",
+    "image": "images/textil.png",
     "membershipLevel": "Gold"
   },
   {
-    "name": "Amazonas Eco-Lodge",
+    "name": "Amazonas Energia Solar",
     "address": "Malecón Tarapacá 202, Iquitos",
     "phone": "+51 65 554433",
-    "website": "https://amazonaslodge.com",
-    "image": "images/amazon_logo.png",
+    "website": "https://amazonasenergiasolar.com/",
+    "image": "images/amazonas.png",
     "membershipLevel": "Silver"
   },
   {
-    "name": "Pisco del Valle",
+    "name": "Pisco Don Alvaro",
     "address": "Panamericana Sur Km 300, Ica",
-    "phone": "+51 56 112233",
-    "website": "https://piscodelvalle.pe",
-    "image": "images/pisco_logo.png",
+    "phone": "+51 943 830 762",
+    "website": "https://piscodonalvaro.pe",
+    "image": "images/pisco.png",
     "membershipLevel": "Bronze"
   },
   {
-    "name": "Pacífico Logística",
+    "name": "Innovacion",
     "address": "Av. Argentina 500, Callao",
     "phone": "+51 1 998877",
-    "website": "https://pacificolog.pe",
-    "image": "images/pacifico_logo.png",
+    "website": "https://innovacion.pe",
+    "image": "images/innovacion_logo.png",
     "membershipLevel": "Gold"
   }
 ]
