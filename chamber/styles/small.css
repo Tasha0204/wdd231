@@ -1,4 +1,3 @@
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -6,6 +5,11 @@
     --accent-coral: #FF715B;   
     --white: #ffffff;
     --light-bg: #f9f9f9;
+ 
+    --border-dark: #dddddd;
+    --border-light: #eeeeee;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-color-dark: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -15,7 +19,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 header {
     background-color: var(--white);
@@ -30,9 +33,13 @@ header {
     margin: 0 auto;
 }
 
-
 .nav-links-wrapper {
     background-color: var(--primary-maroon);
+    color: var(--white);
+}
+
+.nav-links-wrapper a {
+    color: var(--white);
 }
 
 nav ul {
@@ -49,13 +56,11 @@ nav ul li a {
     font-weight: 600;
 }
 
-
 nav ul li a.active {
     color: var(--accent-coral);
     border-bottom: 2px solid var(--accent-coral);
     padding-bottom: 5px;
 }
-
 
 main {
     flex: 1;
@@ -73,7 +78,6 @@ main {
     margin-bottom: 2rem;
 }
 
-
 #directory-data.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,12 +85,12 @@ main {
 }
 
 #directory-data.grid .card {
-    background: var(--white);
-    border: 1px solid #ddd;
+    background-color: var(--white);
+    border: 1px solid var(--border-dark);
     padding: 20px;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 #directory-data.grid .card img {
@@ -95,7 +99,6 @@ main {
     margin: 0 auto 15px;
     display: block;
 }
-
 
 #directory-data.list {
     display: flex;
@@ -107,10 +110,10 @@ main {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr;
     align-items: center;
-    background: var(--white);
+    background-color: var(--white);
     padding: 10px 20px;
     text-align: left;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
 }
 
 #directory-data.list .card img {
@@ -145,13 +148,14 @@ footer {
     gap: 20px;
 }
 
+
 #businesses.grid .card {
-    background: white;
+    background-color: var(--white);
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-dark);
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px var(--shadow-color-dark);
 }
 
 #businesses.grid .card img {
@@ -165,7 +169,6 @@ footer {
     display: none; 
 }
 
-
 #menu.open span:nth-child(1) {
     display: none;
 }
@@ -173,7 +176,6 @@ footer {
 #menu.open span:nth-child(2) {
     display: inline;
 }
-
 
 @media (min-width: 680px) {
     #menu {
