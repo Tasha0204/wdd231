@@ -8,8 +8,8 @@
  
     --border-dark: #dddddd;
     --border-light: #eeeeee;
-    --shadow-color: rgba(0, 0, 0, 0.05);
-    --shadow-color-dark: rgba(0, 0, 0, 0.1);
+    --shadow-color: #0000000d;
+    --shadow-color-dark: #0000001a;
 }
 
 body {
@@ -147,7 +147,6 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-
 
 #businesses.grid .card {
     background-color: var(--white);
