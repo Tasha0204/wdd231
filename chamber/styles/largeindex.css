@@ -1,0 +1,33 @@
+header {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.grid-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.spotlight-section {
+    grid-column: 1 / -1;
+}
+
+.spotlight-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-around;
+}
+
+.spotlight-card {
+    flex: 1;
+    margin-bottom: 0;
+}

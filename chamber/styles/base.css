@@ -1,0 +1,172 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ff9900;
+    --text-color: #333333;
+    --light-bg: #f4f4f4;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+}
+
+nav {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+#nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Se controla con JS para el menú hamburguesa */
+    flex-direction: column;
+    text-align: center;
+}
+
+#nav-menu.show {
+    display: flex;
+}
+
+#nav-menu li a {
+    display: block;
+    padding: 0.8rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#nav-menu li a.active, #nav-menu li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* HERO SECTION CON OVERLAY COMPLETO */
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 51, 102, 0.85);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* GRID PRINCIPAL (VISTA MÓVIL: UNA COLUMNA) */
+.grid-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* SPOTLIGHTS & CLIMA DECORACIÓN */
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.forecast-day {
+    background: var(--light-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    flex: 1;
+}
+
+.spotlight-card {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.spotlight-card.Gold { border-color: #ffd700; background-color: #fffdf0; }
+.spotlight-card.Silver { border-color: #c0c0c0; background-color: #fafafa; }
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
