@@ -1,29 +1,35 @@
-// 1. Gestión de Fechas del Footer y Menú Responsive (FIXED IDs ❌)
-const currentYearElement = document.getElementById('currentyear');
-if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
-}
+// 1. Gestión de Fechas del Footer y Menú Responsive
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYearElement = document.getElementById('currentyear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 
-const lastModifiedElement = document.getElementById('lastModified');
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = document.lastModified;
-}
+    const lastModifiedElement = document.getElementById('lastModified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = document.lastModified;
+    }
 
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-}
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Ejecutar funciones principales cuando el DOM esté listo
+    fetchWeather();
+    fetchSpotlights();
+});
 
 // ==========================================
 // 2. Integración de API Clima (OpenWeatherMap)
 // ==========================================
-const apiKey = 'TU_API_KEY'; // Cambia esto por tu API Key real cuando hagas el despliegue
-const lat = '-12.0464';      // Latitud de Lima
-const lon = '-77.0428';      // Longitud de Lima
+const apiKey = 'b64e907f6334d705f0ed6432b0f1cdf8'; 
+const lat = '-12.0464';      
+const lon = '-77.0428';      
 const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${apiKey}`;
 
 async function fetchWeather() {
@@ -61,9 +67,7 @@ function displayForecast(data) {
     const forecastContainer = document.getElementById('weather-forecast');
     if (!forecastContainer) return;
 
-    forecastContainer.innerHTML = ''; // Limpiar contenedor
-    
-    // Filtramos un registro por día (OpenWeather entrega datos cada 3 horas, tomamos saltos de 8)
+    forecastContainer.innerHTML = ''; 
     const dailyData = [data.list[8], data.list[16], data.list[24]];
     
     dailyData.forEach(day => {
@@ -83,9 +87,9 @@ function displayForecast(data) {
 }
 
 // ==========================================
-// 3. Lógica de Miembros Destacados (JSON & Random)
+// 3. Lógica de Miembros Destacados
 // ==========================================
-const membersUrl = 'data/members.json'; // Ajusta la ruta si está en la raíz o subcarpetas
+const membersUrl = 'data/members.json';
 
 async function fetchSpotlights() {
     try {
@@ -93,10 +97,7 @@ async function fetchSpotlights() {
         if (!response.ok) throw new Error('Error al leer el archivo JSON de miembros');
         const members = await response.json();
         
-        // Regla: Filtrar solo miembros Gold o Silver
         const eligibleMembers = members.filter(m => m.membershipLevel === 'Gold' || m.membershipLevel === 'Silver');
-        
-        // Selección Aleatoria: Elegir entre 2 o 3 miembros sin repetir
         const selectedMembers = getRandomMembers(eligibleMembers, 3);
         
         displaySpotlights(selectedMembers);
@@ -118,7 +119,7 @@ function displaySpotlights(membersList) {
     const container = document.getElementById('spotlight-container');
     if (!container) return;
 
-    container.innerHTML = ''; // Limpiar marcador de carga "Loading..."
+    container.innerHTML = ''; 
     
     membersList.forEach(member => {
         const card = document.createElement('div');
@@ -135,7 +136,3 @@ function displaySpotlights(membersList) {
         container.appendChild(card);
     });
 }
-
-// Ejecución inicial al cargar la página
-fetchWeather();
-fetchSpotlights();
