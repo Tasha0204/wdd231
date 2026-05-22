@@ -1,20 +1,29 @@
-// 1. Gestión de Fechas del Footer y Menú Responsive
-document.getElementById('current-year').textContent = new Date().getFullYear();
-document.getElementById('last-modified').textContent = `Última modificación: ${document.lastModified}`;
+// 1. Gestión de Fechas del Footer y Menú Responsive (FIXED IDs ❌)
+const currentYearElement = document.getElementById('currentyear');
+if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+}
+
+const lastModifiedElement = document.getElementById('lastModified');
+if (lastModifiedElement) {
+    lastModifiedElement.textContent = document.lastModified;
+}
 
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-});
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+}
 
 // ==========================================
 // 2. Integración de API Clima (OpenWeatherMap)
 // ==========================================
-const apiKey = 'TU_API_KEY'; // Cambia esto por tu API Key real
-const lat = '-12.0464';      // Ejemplo: Latitud de Lima
-const lon = '-77.0428';      // Ejemplo: Longitud de Lima
+const apiKey = 'TU_API_KEY'; // Cambia esto por tu API Key real cuando hagas el despliegue
+const lat = '-12.0464';      // Latitud de Lima
+const lon = '-77.0428';      // Longitud de Lima
 const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${apiKey}`;
 
 async function fetchWeather() {
@@ -27,12 +36,17 @@ async function fetchWeather() {
         displayForecast(data);
     } catch (error) {
         console.error(error);
-        document.getElementById('weather-current').innerHTML = `<p>No se pudo cargar el clima.</p>`;
+        const currentContainer = document.getElementById('weather-current');
+        if (currentContainer) {
+            currentContainer.innerHTML = `<p>No se pudo cargar el clima.</p>`;
+        }
     }
 }
 
 function displayCurrentWeather(data) {
     const currentContainer = document.getElementById('weather-current');
+    if (!currentContainer) return;
+
     const current = data.list[0];
     const temp = Math.round(current.main.temp);
     const desc = current.weather[0].description;
@@ -45,6 +59,8 @@ function displayCurrentWeather(data) {
 
 function displayForecast(data) {
     const forecastContainer = document.getElementById('weather-forecast');
+    if (!forecastContainer) return;
+
     forecastContainer.innerHTML = ''; // Limpiar contenedor
     
     // Filtramos un registro por día (OpenWeather entrega datos cada 3 horas, tomamos saltos de 8)
@@ -69,7 +85,7 @@ function displayForecast(data) {
 // ==========================================
 // 3. Lógica de Miembros Destacados (JSON & Random)
 // ==========================================
-const membersUrl = 'data/members.json'; // Ajusta la ruta si está en la raíz
+const membersUrl = 'data/members.json'; // Ajusta la ruta si está en la raíz o subcarpetas
 
 async function fetchSpotlights() {
     try {
@@ -86,7 +102,10 @@ async function fetchSpotlights() {
         displaySpotlights(selectedMembers);
     } catch (error) {
         console.error(error);
-        document.getElementById('spotlight-container').innerHTML = `<p>Error al cargar destaques.</p>`;
+        const spotlightContainer = document.getElementById('spotlight-container');
+        if (spotlightContainer) {
+            spotlightContainer.innerHTML = `<p>Error al cargar destaques.</p>`;
+        }
     }
 }
 
@@ -97,7 +116,9 @@ function getRandomMembers(arr, n) {
 
 function displaySpotlights(membersList) {
     const container = document.getElementById('spotlight-container');
-    container.innerHTML = ''; // Limpiar marcador de carga
+    if (!container) return;
+
+    container.innerHTML = ''; // Limpiar marcador de carga "Loading..."
     
     membersList.forEach(member => {
         const card = document.createElement('div');
