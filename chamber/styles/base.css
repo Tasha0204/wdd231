@@ -31,7 +31,7 @@ header {
     gap: 1rem;
 }
 
-/* FIXED: Target the new paragraph class (.header-title) instead of h1 to keep styles identical */
+
 .logo-container .header-title {
     font-family: var(--heading-font);
     font-size: 1.5rem;
@@ -80,7 +80,7 @@ nav {
     color: var(--primary-color);
 }
 
-/* HERO SECTION WITH OVERLAY ACCESSIBILITY */
+
 .hero-section {
     position: relative;
     width: 100%;
@@ -120,7 +120,7 @@ nav {
     transition: 0.3s;
 }
 
-/* MAIN RESPONSIVE GRID ACCORDING TO AUDIT STANDARDS */
+
 .grid-container {
     padding: 1rem;
     display: grid;
@@ -182,7 +182,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* VISUALLY HIDDEN H1 SPECIFIC FOR AUDIT LOGS AND SEO */
+
 .main-title {
     position: absolute;
     width: 1px;

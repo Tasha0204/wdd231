@@ -1,146 +1,202 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-    --primary-maroon: #003366; 
-    --accent-coral: #FF715B;   
+    --primary-color: #003366;
+    --secondary-color: #ff9900;
+    --text-color: #333333;
+    --light-bg: #f4f4f4;
     --white: #ffffff;
-    --light-bg: #f9f9f9;
- 
-    --border-dark: #dddddd;
-    --border-light: #eeeeee;
-    --shadow-color: #0000000d;
-    --shadow-color-dark: #0000001a;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
     background-color: var(--light-bg);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
-    background-color: var(--white);
-    padding: 2rem 0;
-    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#icc {
-    max-height: 120px;
-    width: auto;
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+}
+
+nav {
+    width: 100%;
+    margin-top: 1rem;
+}
+.nav-links-wrapper {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0; 
+    padding-left: 20px; 
+    gap: 40px; 
+}
+#menu-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
     display: block;
     margin: 0 auto;
 }
 
-.nav-links-wrapper {
-    background-color: var(--primary-maroon);
-    color: var(--white);
-}
-
-.nav-links-wrapper a {
-    color: var(--white);
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
+#nav-menu {
     list-style: none;
-    padding: 15px 0;
-    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    text-align: center;
 }
 
-nav ul li a {
+#nav-menu.show {
+    display: flex;
+}
+
+#nav-menu li a {
+    display: block;
+    padding: 0.8rem;
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-nav ul li a.active {
-    color: var(--accent-coral);
-    border-bottom: 2px solid var(--accent-coral);
-    padding-bottom: 5px;
+#nav-menu li a.active, #nav-menu li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-main {
-    flex: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+
+.hero-section {
+    position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
-.directory-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-#directory-data.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-#directory-data.grid .card {
-    background-color: var(--white);
-    border: 1px solid var(--border-dark);
-    padding: 20px;
+.cta-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 51, 102, 0.85);
+    color: var(--white);
+    padding: 1.5rem;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-#directory-data.grid .card img {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto 15px;
-    display: block;
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-#directory-data.list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
-#directory-data.list .card {
+.grid-container {
+    padding: 1rem;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr;
-    align-items: center;
-    background-color: var(--white);
-    padding: 10px 20px;
-    text-align: left;
-    border: 1px solid var(--border-light);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
-#directory-data.list .card img {
-    display: none; 
+section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* 7. FOOTER */
-footer {
-    background-color: var(--primary-maroon);
-    color: var(--white);
-    padding: 2rem;
+section h3 {
+    font-family: var(--heading-font);
+    margin-top: 0;
+}
+
+/* WEATHER & SPOTLIGHT CONFIGURATIONS */
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.forecast-day {
+    background: var(--light-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    flex: 1;
+}
+
+.spotlight-card {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
     text-align: center;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+.spotlight-card.Gold { border-color: #ffd700; background-color: #fffdf0; }
+.spotlight-card.Silver { border-color: #c0c0c0; background-color: #fafafa; }
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
 }
 
-.social-icons img {
-    width: 25px;
-    filter: brightness(0) invert(1);
-    margin: 0 10px;
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
 }
+
+
+.main-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* 3. DIRECTORIO Y TARJETAS (Grid/List) */
+main { flex: 1; max-width: 1000px; margin: 2rem auto; width: 90%; }
 
 #businesses.grid {
     display: grid;
@@ -149,42 +205,27 @@ footer {
 }
 
 #businesses.grid .card {
-    background-color: var(--white);
+    background: var(--white);
     padding: 20px;
-    border: 1px solid var(--border-dark);
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 6px var(--shadow-color-dark);
+    box-shadow: 0 4px 6px rgb(255, 255, 255);
 }
 
-#businesses.grid .card img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
+#businesses.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#menu span:nth-child(2) {
-    display: none; 
+#businesses.list .card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--white);
+    border-bottom: 1px solid #ddd;
 }
 
-#menu.open span:nth-child(1) {
-    display: none;
-}
+#businesses.list .card img { display: none; }
 
-#menu.open span:nth-child(2) {
-    display: inline;
-}
-
-@media (min-width: 680px) {
-    #menu {
-        display: none;
-    }
-}
-
-@media (max-width: 650px) {
-    #directory-data.list .card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}

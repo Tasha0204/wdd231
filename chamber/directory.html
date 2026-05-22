@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | PERU Chamber of Commerce</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat+Alternates:wght@100;400;700&display=swap" rel="stylesheet">
     
-    <meta name="description" content="Explore the official Peru Chamber of Commerce business directory. Discover and connect with top local businesses, premium products, and services in the region.">
+    <meta name="description" content="Explore the official Peru Chamber of Commerce business directory.">
     <meta name="author" content="Tasha Vidal">
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Business Directory | PERU Chamber of Commerce">
-    <meta property="og:description" content="Directory of the Chamber of Commerce of Peru: the official space for small businesses to promote their brand.">
-    <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/hero.jpg">
-    <meta property="og:image:alt" content="Panoramic view of the city of Lima, Peru - Chamber of Commerce featured landmark">
-    <meta property="og:image:width" content="1400">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/">
-
-    <link rel="icon" href="images/logofavicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/largeindex.css">
     <link rel="stylesheet" href="styles/directory.css">
 
     <script src="scripts/directory.js" type="module"></script>
@@ -31,32 +21,34 @@
 
 <body>
     <header>
-        <div class="nav-links-wrapper full-width">
-            <a href="https://tasha0204.github.io/wdd231/chamber/index.html">
-                <img id="icc" src="images/logomarca.png" alt="Peru Chamber of Commerce" width="40" height="40">
-            </a>
+        <div class="nav-links-wrapper">
+            <div class="logo-box">
+                <a href="index.html">
+                    <img id="icc" src="images/logomarca.png" alt="Peru Chamber of Commerce" width="50" height="50">
+                </a>
+                <h1>PERU Chamber of Commerce</h1>
+            </div>
 
-            <nav class="menuLinks">
-                <span id="data"></span>
-                <ul>
-                    <li><a href="/wdd231/chamber/index.html">Home</a></li>
-                    <li><a href="/wdd231/chamber/directory.html">Directory</a></li>
-                    <li><a href="/wdd231/chamber/join.html">Join</a></li>
-                    <li><a href="/wdd231/chamber/discover.html">Discover</a></li>
+            <nav>
+                <button id="menu" aria-label="menu">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="directory.html"class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                 </ul>
             </nav>
-            <button id="menu" aria-label="menu"></button>
-        </div>
-
-        <div class="hero-container">
-            <div class="hero">
-               <picture>
-                 <source media="(max-width: 680px)" srcset="images/hero.jpg">
-                 <img src="images/lima.webp" width="1600" height="350" alt="Panoramic view of the city of Lima">
-              </picture>
-            </div>
         </div>
     </header>
+
+    <div class="hero-container">
+        <div class="hero">
+            <picture>
+                <source media="(max-width: 680px)" srcset="images/hero.jpg">
+                <img src="images/lima.webp" width="1600" height="350" alt="Panoramic view of the city of Lima">
+            </picture>
+        </div>
+    </div>
 
     <main>
         <div class="container">
@@ -77,26 +69,27 @@
             <div id="businesses"></div>
         </div>
     </main>
-   <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>PERU Chamber of Commerce</p>
-            <p>peru@gmail.com.ph</p>
-            <p>PERU, LIMA City</p>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>PERU Chamber of Commerce</p>
+                <p>peru@gmail.com.ph</p>
+                <p>PERU, LIMA City</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                 <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Peru</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
-        </div>
-        
-        <div class="footer-copy">
-             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-            <p>Lima, Peru</p>
-            <p>Last Update: <span id="lastModified"></span></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

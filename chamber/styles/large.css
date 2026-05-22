@@ -1,9 +1,35 @@
-/* Larger Views ******************************/
-@media (min-width: 1024px) {
-    main {
-        width: 80%;
-        max-width: 1200px;
+@media (min-width: 768px) {
+    body header {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    
+    body #menu-toggle {
+        display: none;
+    }
+
+    body #nav-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    body .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body .spotlight-section {
+        grid-column: 1 / -1;
+    }
+
+    body .spotlight-grid {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: space-around;
+    }
+
+    body .spotlight-card {
+        flex: 1;
+        margin-bottom: 0;
+    }
 }
