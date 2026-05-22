@@ -1,4 +1,4 @@
-// 1. Gestión de Fechas del Footer y Menú Responsive
+
 document.addEventListener('DOMContentLoaded', () => {
     const currentYearElement = document.getElementById('currentyear');
     if (currentYearElement) {
@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Ejecutar funciones principales cuando el DOM esté listo
+   
     fetchWeather();
     fetchSpotlights();
 });
 
-// ==========================================
-// 2. Integración de API Clima (OpenWeatherMap)
-// ==========================================
+
 const apiKey = 'b64e907f6334d705f0ed6432b0f1cdf8'; 
 const lat = '-12.0464';      
 const lon = '-77.0428';      
@@ -86,9 +84,7 @@ function displayForecast(data) {
     });
 }
 
-// ==========================================
-// 3. Lógica de Miembros Destacados
-// ==========================================
+
 const membersUrl = 'data/members.json';
 
 async function fetchSpotlights() {
