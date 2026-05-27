@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us | PERU Chamber of Commerce</title>
+
+    <link rel="icon" href="images/logofavicon.ico">
     
+    <meta property="og:title" content="Join Us | PERU Chamber of Commerce">
+    <meta property="og:description" content="Join the official Peru Chamber of Commerce and grow your business by connecting with local leaders and experts.">
+    <meta property="og:image" content="https://tu-sitio-web.com/images/logomarca.png">
+    <meta property="og:url" content="https://tu-sitio-web.com/join.html">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat+Alternates:wght@100;400;700&display=swap" rel="stylesheet">
@@ -42,27 +50,35 @@
             
             <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" required autocomplete="given-name" title="First Name (letters only)">
+                <input type="text" id="fname" name="fname" required autocomplete="given-name" title="Enter your first name">
             </div>
             <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" required autocomplete="family-name" title="Last Name">
+                <input type="text" id="lname" name="lname" required autocomplete="family-name" title="Enter your last name">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="example@email.com" autocomplete="email">
+                <input type="email" id="email" name="email" required placeholder="example@email.com" autocomplete="email" title="Enter your email address">
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                <label for="phone">Mobile Phone</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Enter your phone number">
             </div>
             <div class="form-group">
-                <label for="org">Organization</label>
-                <input type="text" id="org" name="org" required>
+                <label for="org">Organization Name</label>
+                <input type="text" id="org" name="org" required autocomplete="organization" title="Enter your organization name">
+            </div>
+            <div class="form-group">
+                <label for="org-title">Organization Title</label>
+                <input type="text" id="org-title" name="org-title" autocomplete="organization-title" title="Enter your job title">
+            </div>
+            <div class="form-group">
+                <label for="description">Organization Description</label>
+                <textarea id="description" name="description" title="Describe your organization"></textarea>
             </div>
             <div class="form-group">
                 <label for="membership">Membership Level</label>
-                <select id="membership" name="membership" required>
+                <select id="membership" name="membership" required title="Select a membership level">
                     <option value="" disabled selected>Select a level</option>
                     <option value="np">Non-Profit</option>
                     <option value="bronze">Bronze</option>
@@ -82,58 +98,15 @@
     </main>
 
     <!-- Modals -->
-    <div id="modal-np" class="modal">
-        <div class="modal-content">
-            <h3>Non-Profit Membership</h3>
-            <p>Designed for charitable organizations to connect with the community.</p>
-            <ul>
-                <li>Listing in the Chamber Member Directory.</li>
-                <li>Access to monthly community meetings.</li>
-                <li>Subscription to our weekly newsletter.</li>
-            </ul>
-            <button onclick="closeModal('modal-np')">Close</button>
-        </div>
-    </div>
-
-    <div id="modal-bronze" class="modal">
-        <div class="modal-content">
-            <h3>Bronze Membership</h3>
-            <p>The perfect start for small businesses looking to grow.</p>
-            <ul>
-                <li>Exclusive access to monthly networking events.</li>
-                <li>"Chamber Member" digital badge for your website.</li>
-                <li>Monthly feature on our social media platforms.</li>
-            </ul>
-            <button onclick="closeModal('modal-bronze')">Close</button>
-        </div>
-    </div>
-
-    <div id="modal-silver" class="modal">
-        <div class="modal-content">
-            <h3>Silver Membership</h3>
-            <p>Elevate your business authority and local presence.</p>
-            <ul>
-                <li>Featured advertising space on our official website.</li>
-                <li>Priority status for all event sponsorships.</li>
-                <li>Invitations to exclusive business development workshops.</li>
-            </ul>
-            <button onclick="closeModal('modal-silver')">Close</button>
-        </div>
-    </div>
-
-    <div id="modal-gold" class="modal">
-        <div class="modal-content">
-            <h3>Gold Membership</h3>
-            <p>VIP status for maximum exposure and strategic growth.</p>
-            <ul>
-                <li>Premium mentions at every Chamber event.</li>
-                <li>Personalized one-on-one business consulting.</li>
-                <li>Main homepage banner display for 3 months.</li>
-            </ul>
-            <button onclick="closeModal('modal-gold')">Close</button>
-        </div>
-    </div>
+    <div id="modal-np" class="modal"><div class="modal-content"><h3>Non-Profit Membership</h3><p>Designed for charitable organizations.</p><button onclick="closeModal('modal-np')">Close</button></div></div>
+    <div id="modal-bronze" class="modal"><div class="modal-content"><h3>Bronze Membership</h3><p>The perfect start for small businesses.</p><button onclick="closeModal('modal-bronze')">Close</button></div></div>
+    <div id="modal-silver" class="modal"><div class="modal-content"><h3>Silver Membership</h3><p>Elevate your business authority.</p><button onclick="closeModal('modal-silver')">Close</button></div></div>
+    <div id="modal-gold" class="modal"><div class="modal-content"><h3>Gold Membership</h3><p>VIP status for maximum exposure.</p><button onclick="closeModal('modal-gold')">Close</button></div></div>
     
+    <footer>
+        <p>&copy; 2026 PERU Chamber of Commerce | Tasha Vidal</p>
+    </footer>
+
     <script src="scripts/join.js"></script>
 </body>
 </html>

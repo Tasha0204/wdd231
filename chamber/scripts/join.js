@@ -1,8 +1,25 @@
-// Timestamp (Punto 12)
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('timestamp').value = new Date().toISOString();
-});
+    // 1. Manejo del Timestamp
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
 
-// Modales (Punto 11)
-function openModal(id) { document.getElementById(id).style.display = "block"; }
-function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    // 2. Manejo de abrir modales (Event Listeners)
+    const triggers = document.querySelectorAll('.modal-trigger');
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const modalId = trigger.getAttribute('data-modal');
+            document.getElementById(modalId).style.display = "block";
+        });
+    });
+
+    // 3. Manejo de cerrar modales
+    const closeButtons = document.querySelectorAll('.close-button');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            document.getElementById(modalId).style.display = "none";
+        });
+    });
+});
