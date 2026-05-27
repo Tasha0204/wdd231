@@ -4,24 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us | PERU Chamber of Commerce</title>
-
-   <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
-    
-    <meta property="og:title" content="Join Us | PERU Chamber of Commerce">
-    <meta property="og:description" content="Join the official Peru Chamber of Commerce and grow your business by connecting with local leaders and experts.">
-    <meta property="og:image" content="https://tu-sitio-web.com/images/logomarca.png">
-    <meta property="og:url" content="https://tu-sitio-web.com/join.html">
-    <meta property="og:type" content="website">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat+Alternates:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <meta name="description" content="Join the official Peru Chamber of Commerce and grow your business.">
     <meta name="author" content="Tasha Vidal">
+    
     <link rel="stylesheet" href="styles/basejoin.css">
     <link rel="stylesheet" href="styles/largeindex.css">
-
     <script src="scripts/join.js" type="module"></script>
 </head>
 <body>
@@ -31,7 +20,6 @@
             <p class="header-title">PERU Chamber of Commerce</p>
         </div>
         <nav>
-            <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -40,10 +28,9 @@
             </ul>
         </nav>
     </header>
-    
-    <h1>Peru Chamber of Commerce</h1>
-    
+
     <main class="join-main">
+        <h1>Peru Chamber of Commerce</h1>
         <h2>Membership Application Form</h2>
         <form action="thankyou.html" method="get">
             <input type="hidden" id="timestamp" name="timestamp">
@@ -70,7 +57,8 @@
             </div>
             <div class="form-group">
                 <label for="org-title">Organization Title</label>
-                <input type="text" id="org-title" name="org-title" autocomplete="organization-title" title="Enter your job title">
+                <input type="text" id="org-title" name="org-title" autocomplete="organization-title" 
+                       title="Enter your job title (at least 7 characters)" pattern="[A-Za-z\s\-]{7,}">
             </div>
             <div class="form-group">
                 <label for="description">Organization Description</label>
@@ -90,41 +78,20 @@
         </form>
 
         <div class="membership-grid">
-            <div class="membership-card" onclick="openModal('modal-np')">Non-Profit Level</div>
-            <div class="membership-card" onclick="openModal('modal-bronze')">Bronze Level</div>
-            <div class="membership-card" onclick="openModal('modal-silver')">Silver Level</div>
-            <div class="membership-card" onclick="openModal('modal-gold')">Gold Level</div>
+            <div class="membership-card" data-modal="modal-np">Non-Profit Level</div>
+            <div class="membership-card" data-modal="modal-bronze">Bronze Level</div>
+            <div class="membership-card" data-modal="modal-silver">Silver Level</div>
+            <div class="membership-card" data-modal="modal-gold">Gold Level</div>
         </div>
     </main>
 
-    <!-- Modals -->
-    <div id="modal-np" class="modal"><div class="modal-content"><h3>Non-Profit Membership</h3><p>Designed for charitable organizations.</p><button onclick="closeModal('modal-np')">Close</button></div></div>
-    <div id="modal-bronze" class="modal"><div class="modal-content"><h3>Bronze Membership</h3><p>The perfect start for small businesses.</p><button onclick="closeModal('modal-bronze')">Close</button></div></div>
-    <div id="modal-silver" class="modal"><div class="modal-content"><h3>Silver Membership</h3><p>Elevate your business authority.</p><button onclick="closeModal('modal-silver')">Close</button></div></div>
-    <div id="modal-gold" class="modal"><div class="modal-content"><h3>Gold Membership</h3><p>VIP status for maximum exposure.</p><button onclick="closeModal('modal-gold')">Close</button></div></div>
-    
-      <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <p>PERU Chamber of Commerce</p>
-                <p>peru@gmail.com.ph</p>
-                <p>PERU, LIMA City</p>
-            </div>
-            
-            <div class="social-icons">
-                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
-                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
-            </div>
-            
-            <div class="footer-copy">
-                 <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-                <p>Lima, Peru</p>
-                <p>Last Update: <span id="lastModified"></span></p>
-            </div>
-        </div>
-    </footer>
+    <div id="modal-np" class="modal"><div class="modal-content"><h3>Non-Profit</h3><p>...</p><button class="close-btn">Close</button></div></div>
+    <div id="modal-bronze" class="modal"><div class="modal-content"><h3>Bronze</h3><p>...</p><button class="close-btn">Close</button></div></div>
+    <div id="modal-silver" class="modal"><div class="modal-content"><h3>Silver</h3><p>...</p><button class="close-btn">Close</button></div></div>
+    <div id="modal-gold" class="modal"><div class="modal-content"><h3>Gold</h3><p>...</p><button class="close-btn">Close</button></div></div>
 
-    <script src="scripts/join.js"></script>
+    <footer>
+        <p>&copy; 2026 PERU Chamber of Commerce | Tasha Vidal</p>
+    </footer>
 </body>
 </html>

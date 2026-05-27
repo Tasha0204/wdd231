@@ -1,21 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Timestamp
-    const timestamp = document.getElementById('timestamp');
-    if (timestamp) timestamp.value = new Date().toISOString();
+    // 1. Asignar Timestamp
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
 
-    // 2. Abrir modales
-    const cards = document.querySelectorAll('.membership-card');
-    cards.forEach((card, index) => {
+    // 2. Abrir modales (usando data-modal)
+    document.querySelectorAll('.membership-card').forEach(card => {
         card.addEventListener('click', () => {
-            const modals = ['modal-np', 'modal-bronze', 'modal-silver', 'modal-gold'];
-            document.getElementById(modals[index]).style.display = "block";
+            const modalId = card.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) modal.style.display = "block";
         });
     });
 
-    // 3. Cerrar modales (buscando la clase .close-btn)
-    const closeButtons = document.querySelectorAll('.close-btn');
-    closeButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
+    // 3. Cerrar modales (usando la clase close-btn)
+    document.querySelectorAll('.close-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
             e.target.closest('.modal').style.display = "none";
         });
     });
