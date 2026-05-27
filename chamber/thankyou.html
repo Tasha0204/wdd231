@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por su registro | Chamber of Commerce</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="large.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 class="header-title">Confirmación de Registro</h1>
+        </div>
+        <nav>
+            <ul id="nav-menu" class="show">
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="thank-you-content" style="max-width: 600px; margin: 2rem auto; text-align: center;">
+            <h2>¡Gracias por unirse a nuestra Cámara de Comercio!</h2>
+            <p>Hemos recibido su información correctamente. Aquí tiene el resumen de sus datos:</p>
+            
+            <div id="results" style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ccc; text-align: left;">
+                <!-- Los datos se cargarán aquí automáticamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Cámara de Comercio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Esta función extrae los datos de la URL y los muestra en la página
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const resultsDiv = document.getElementById('results');
+            
+            // Extraemos los valores
+            const fname = params.get('fname');
+            const lname = params.get('lname');
+            const email = params.get('email');
+            const phone = params.get('phone');
+            const org = params.get('org');
+            const timestamp = params.get('timestamp');
+
+            // Insertamos los datos en el HTML
+            resultsDiv.innerHTML = `
+                <p><strong>Nombre:</strong> ${fname} ${lname}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Teléfono:</strong> ${phone}</p>
+                <p><strong>Organización:</strong> ${org}</p>
+                <p><strong>Fecha de registro:</strong> ${new Date(timestamp).toLocaleString()}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
