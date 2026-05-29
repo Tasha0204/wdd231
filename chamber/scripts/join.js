@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Asignar Timestamp
+    
     const timestampField = document.getElementById('timestamp');
     if (timestampField) {
         timestampField.value = new Date().toISOString();
     }
 
-    // 2. Abrir modales (usando data-modal)
+    
+    const currentYearElement = document.getElementById('currentyear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+    // 3. Colocar la última fecha de modificación en el footer
+    const lastModifiedElement = document.getElementById('lastModified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = document.lastModified;
+    }
+   
     document.querySelectorAll('.membership-card').forEach(card => {
         card.addEventListener('click', () => {
             const modalId = card.getAttribute('data-modal');
@@ -14,10 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Cerrar modales (usando la clase close-btn)
+   
     document.querySelectorAll('.close-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.target.closest('.modal').style.display = "none";
+            const openModal = e.target.closest('.modal');
+            if (openModal) openModal.style.display = "none";
         });
     });
 });
