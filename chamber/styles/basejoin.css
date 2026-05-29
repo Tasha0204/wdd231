@@ -1,9 +1,16 @@
 :root {
+    /* Paleta de Colores Estandarizada */
     --primary-color: #003366;
     --secondary-color: #ff9900;
+    --secondary-hover: #e68a00;
     --text-color: #333333;
     --light-bg: #f4f4f4;
     --white: #ffffff;
+    --border-color: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Fuentes */
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
@@ -88,7 +95,7 @@ nav {
     padding: 2rem;
     background: var(--white);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .form-group {
@@ -107,7 +114,7 @@ nav {
 .form-group select,
 .form-group textarea {
     padding: 0.8rem;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
     width: 100%;
@@ -133,7 +140,7 @@ nav {
 }
 
 .btn-submit:hover {
-    background-color: #e68a00;
+    background-color: var(--secondary-hover);
 }
 
 /* Membership Grid & Cards */
@@ -172,8 +179,9 @@ nav {
     left: 0; 
     width: 100%; 
     height: 100%; 
-    background: rgba(0,0,0,0.5); 
+    background: var(--modal-overlay); 
 }
+
 .modal-content { 
     background: var(--white); 
     margin: 15% auto; 
