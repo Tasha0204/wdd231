@@ -193,3 +193,23 @@ footer {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+@media (min-width: 768px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        align-items: center; 
+        gap: 2rem;
+    }
+
+    .footer-info {
+        text-align: left; 
+    }
+
+    .footer-social {
+        text-align: center; 
+    }
+
+    .footer-meta {
+        text-align: right; 
+    }
+}
