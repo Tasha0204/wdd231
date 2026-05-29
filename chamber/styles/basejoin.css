@@ -21,7 +21,6 @@ body {
     background-color: var(--light-bg);
 }
 
-
 header {
     background-color: var(--primary-color);
     color: var(--white);
@@ -56,7 +55,7 @@ nav {
     font-size: 2rem;
     cursor: pointer;
     display: block;
-    margin: 0 auto;
+    margin: 0 margin: 0 auto;
 }
 
 #nav-menu {
@@ -85,7 +84,6 @@ nav {
     color: var(--primary-color);
 }
 
-
 .join-main {
     max-width: 1000px;
     margin: 2rem auto;
@@ -98,14 +96,13 @@ nav {
     color: var(--primary-color);
 }
 
-
 form {
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 15px var(--shadow-color);
     padding: 2.5rem;
-    max-width: 650px; 
-    margin: 0 auto 3rem auto; 
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
     box-sizing: border-box;
 }
 
@@ -156,7 +153,6 @@ form {
     background-color: var(--secondary-hover);
 }
 
-/* --- ANIMACIÓN DE CARGA INICIAL (Requisito 6 y 14) --- */
 @keyframes cardLoadIn {
     from {
         opacity: 0;
@@ -167,7 +163,6 @@ form {
         transform: translateY(0);
     }
 }
-
 
 .membership-grid {
     display: grid;
@@ -187,12 +182,9 @@ form {
     font-weight: bold;
     color: var(--primary-color);
     box-shadow: 0 4px 6px var(--shadow-color);
-    margin: 0; 
-    
-  
+    margin: 0;
     animation: cardLoadIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
-
 
 .membership-card:nth-child(1) { animation-delay: 0.1s; }
 .membership-card:nth-child(2) { animation-delay: 0.2s; }
@@ -205,7 +197,6 @@ form {
     color: var(--white);
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
-
 
 .modal { 
     display: none; 
@@ -267,7 +258,6 @@ form {
     background-color: var(--secondary-hover);
 }
 
-
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -296,14 +286,13 @@ footer {
 }
 
 .social-icons img {
-    filter: brightness(0) invert(1); /
-    transition: transform 0.3s;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
     transform: scale(1.2);
 }
-
 
 @media (min-width: 768px) {
     .footer-container {
