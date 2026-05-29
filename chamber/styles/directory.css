@@ -229,23 +229,3 @@ main { flex: 1; max-width: 1000px; margin: 2rem auto; width: 90%; }
 
 #businesses.list .card img { display: none; }
 
-@media (min-width: 768px) {
-    .footer-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; 
-        align-items: center; 
-        gap: 2rem;
-    }
-
-    .footer-info {
-        text-align: left; 
-    }
-
-    .footer-social {
-        text-align: center; 
-    }
-
-    .footer-meta {
-        text-align: right; 
-    }
-}
