@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content=Chamber of Commerce - Join Us Today>
-    <meta property="og:description" content="Apply for membership, select your tier, and discover exclusive benefits for your business."
+    <meta property="og:title" content="Chamber of Commerce - Join Us Today">
+    <meta property="og:description" content="Apply for membership, select your tier, and discover exclusive benefits for your business.">
     <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
     <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
@@ -72,7 +72,7 @@
             <div class="form-group">
                 <label for="org-title">Organization Title</label>
                 <input type="text" id="org-title" name="org-title" autocomplete="organization-title" 
-                       title="Enter your job title (at least 7 characters)" pattern="[A-Za-z\s\-]{7,}">
+                       title="Enter your job title (at least 7 characters)" pattern="^([A-Za-z\s\-]{7,})?$">
             </div>
             <div class="form-group">
                 <label for="description">Organization Description</label>
@@ -80,7 +80,7 @@
             </div>
             <div class="form-group">
                 <label for="membership">Membership Level</label>
-                <select id="membership" name="membership" required title="Select a membership level">
+                <select id="membership" name="membership" required title="Select a membership level" autocomplete="organization">
                     <option value="" disabled selected>Select a level</option>
                     <option value="np">Non-Profit</option>
                     <option value="bronze">Bronze</option>
@@ -99,83 +99,84 @@
         </div>
     </main>
 
-   <div id="modal-np" class="modal">
-    <div class="modal-content">
-        <h3>Non-Profit Membership</h3>
-        <p><strong>Benefits of the Non-Profit Level:</strong></p>
-        <ul>
-            <li><strong>Digital Directory:</strong> Basic inclusion in the Chamber's official business directory.</li>
-            <li><strong>Training & Education:</strong> Free access to educational workshops and professional webinars.</li>
-            <li><strong>Strategic Alliances:</strong> Networking spaces to connect with private companies and seek sponsorships.</li>
-            <li><strong>Admission Fee:</strong> Waived (Subject to legal status verification).</li>
-        </ul>
-        <button class="close-btn">Close</button>
+    <div id="modal-np" class="modal">
+        <div class="modal-content">
+            <h3>Non-Profit Membership</h3>
+            <p><strong>Benefits of the Non-Profit Level:</strong></p>
+            <ul>
+                <li><strong>Digital Directory:</strong> Basic inclusion in the Chamber's official business directory.</li>
+                <li><strong>Training & Education:</strong> Free access to educational workshops and professional webinars.</li>
+                <li><strong>Strategic Alliances:</strong> Networking spaces to connect with private companies and seek sponsorships.</li>
+                <li><strong>Admission Fee:</strong> Waived (Subject to legal status verification).</li>
+            </ul>
+            <button class="close-btn">Close</button>
+        </div>
     </div>
-</div>
 
-<div id="modal-bronze" class="modal">
-    <div class="modal-content">
-        <h3>Bronze Membership</h3>
-        <p><strong>Benefits of the Bronze Level:</strong></p>
-        <ul>
-            <li><strong>Business Profile:</strong> Standard directory listing with direct links to your website and social media.</li>
-            <li><strong>Trust Badge:</strong> Digital "Active Member" seal to display on your business website.</li>
-            <li><strong>Networking Access:</strong> Admission to our general monthly business networking events.</li>
-            <li><strong>Initial Support:</strong> Special discounts on business management and digital marketing courses.</li>
-        </ul>
-        <button class="close-btn">Close</button>
+    <div id="modal-bronze" class="modal">
+        <div class="modal-content">
+            <h3>Bronze Membership</h3>
+            <p><strong>Benefits of the Bronze Level:</strong></p>
+            <ul>
+                <li><strong>Business Profile:</strong> Standard directory listing with direct links to your website and social media.</li>
+                <li><strong>Trust Badge:</strong> Digital "Active Member" seal to display on your business website.</li>
+                <li><strong>Networking Access:</strong> Admission to our general monthly business networking events.</li>
+                <li><strong>Initial Support:</strong> Special discounts on business management and digital marketing courses.</li>
+            </ul>
+            <button class="close-btn">Close</button>
+        </div>
     </div>
-</div>
 
-<div id="modal-silver" class="modal">
-    <div class="modal-content">
-        <h3>Silver Membership</h3>
-        <p><strong>Benefits of the Silver Level:</strong></p>
-        <ul>
-            <li><strong>Includes all Bronze Level benefits.</strong></li>
-            <li><strong>Monthly Advertising:</strong> Featured advertising slot in the Chambers monthly email newsletter.</li>
-            <li><strong>VIP Passes:</strong> 2 complimentary tickets to major annual conferences and gala dinners.</li>
-            <li><strong>Internal Promotion:</strong> Permission to publish exclusive offers and discounts for other network members.</li>
-            <li><strong>Venue Discounts:</strong> 20% discount on renting the Chambers meeting rooms and event spaces.</li>
-        </ul>
-        <button class="close-btn">Close</button>
+    <div id="modal-silver" class="modal">
+        <div class="modal-content">
+            <h3>Silver Membership</h3>
+            <p><strong>Benefits of the Silver Level:</strong></p>
+            <ul>
+                <li><strong>Includes all Bronze Level benefits.</strong></li>
+                <li><strong>Monthly Advertising:</strong> Featured advertising slot in the Chambers monthly email newsletter.</li>
+                <li><strong>VIP Passes:</strong> 2 complimentary tickets to major annual conferences and gala dinners.</li>
+                <li><strong>Internal Promotion:</strong> Permission to publish exclusive offers and discounts for other network members.</li>
+                <li><strong>Venue Discounts:</strong> 20% discount on renting the Chambers meeting rooms and event spaces.</li>
+            </ul>
+            <button class="close-btn">Close</button>
+        </div>
     </div>
-</div>
 
-<div id="modal-gold" class="modal">
-    <div class="modal-content">
-        <h3>Gold Membership (Premium)</h3>
-        <p><strong>Benefits of the Gold Level:</strong></p>
-        <ul>
-            <li><strong>Includes all previous membership benefits.</strong></li>
-            <li><strong>Maximum Visibility:</strong> Prominent logo display on the Home Page (Spotlight section) and top priority in directory searches.</li>
-            <li><strong>Exclusive Sponsorship:</strong> First priority to become a main sponsor at major trade shows and high-profile events.</li>
-            <li><strong>Commercial Leadership:</strong> Full access to sector committees with voting rights on local commercial initiatives.</li>
-            <li><strong>Insider Insights:</strong> Free access to exclusive economic reports, market trends, and statistical studies.</li>
-        </ul>
-        <button class="close-btn">Close</button>
+    <div id="modal-gold" class="modal">
+        <div class="modal-content">
+            <h3>Gold Membership (Premium)</h3>
+            <p><strong>Benefits of the Gold Level:</strong></p>
+            <ul>
+                <li><strong>Includes all previous membership benefits.</strong></li>
+                <li><strong>Maximum Visibility:</strong> Prominent logo display on the Home Page (Spotlight section) and top priority in directory searches.</li>
+                <li><strong>Exclusive Sponsorship:</strong> First priority to become a main sponsor at major trade shows and high-profile events.</li>
+                <li><strong>Commercial Leadership:</strong> Full access to sector committees with voting rights on local commercial initiatives.</li>
+                <li><strong>Insider Insights:</strong> Free access to exclusive economic reports, market trends, and statistical studies.</li>
+            </ul>
+            <button class="close-btn">Close</button>
+        </div>
     </div>
-</div>
+
     <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>PERU Chamber of Commerce</p>
-            <p>peru@gmail.com.ph</p>
-            <p>PERU, LIMA City</p>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>PERU Chamber of Commerce</p>
+                <p>peru@gmail.com.ph</p>
+                <p>PERU, LIMA City</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                 <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Peru</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
-        </div>
-        
-        <div class="footer-copy">
-             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-            <p>Lima, Peru</p>
-            <p>Last Update: <span id="lastModified"></span></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

@@ -1,60 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por su registro | Chamber of Commerce</title>
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="large.css">
+    <title>Thank You for Registering | Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/basejoin.css">
+    <link rel="stylesheet" href="styles/largeindex.css" media="(min-width: 768px)">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <h1 class="header-title">Confirmación de Registro</h1>
+            <h1 class="header-title">Registration Confirmation</h1>
         </div>
         <nav>
             <ul id="nav-menu" class="show">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html">Back to Join</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="thank-you-content" style="max-width: 600px; margin: 2rem auto; text-align: center;">
-            <h2>¡Gracias por unirse a nuestra Cámara de Comercio!</h2>
-            <p>Hemos recibido su información correctamente. Aquí tiene el resumen de sus datos:</p>
+        <section class="thank-you-content" style="max-width: 600px; margin: 2rem auto; text-align: center; padding: 0 1rem;">
+            <h2>Thank you for joining our Chamber of Commerce!</h2>
+            <p>We have successfully received your information. Here is a summary of your data:</p>
             
-            <div id="results" style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ccc; text-align: left;">
-                <!-- Los datos se cargarán aquí automáticamente -->
-            </div>
+            <div id="results" style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ccc; text-align: left; margin-top: 1.5rem;">
+                </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Cámara de Comercio. Todos los derechos reservados.</p>
+    <footer style="text-align: center; padding: 1rem; margin-top: 2rem; border-top: 1px solid #ccc;">
+        <p>&copy; 2026 Chamber of Commerce. All rights reserved.</p>
     </footer>
 
     <script>
-        // Esta función extrae los datos de la URL y los muestra en la página
         window.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const resultsDiv = document.getElementById('results');
             
-            // Extraemos los valores
-            const fname = params.get('fname');
-            const lname = params.get('lname');
-            const email = params.get('email');
-            const phone = params.get('phone');
-            const org = params.get('org');
+            const fname = params.get('fname') || 'N/A';
+            const lname = params.get('lname') || 'N/A';
+            const email = params.get('email') || 'N/A';
+            const phone = params.get('phone') || 'N/A';
+            const org = params.get('org') || 'N/A';
+            const title = params.get('org-title') || 'N/A';
+            const membership = params.get('membership') || 'N/A';
             const timestamp = params.get('timestamp');
 
-            // Insertamos los datos en el HTML
+            let registrationDate = new Date().toLocaleString();
+            if (timestamp) {
+                const parsedTime = parseInt(timestamp);
+                if (!isNaN(parsedTime)) {
+                    registrationDate = new Date(parsedTime).toLocaleString();
+                } else {
+                    registrationDate = new Date(timestamp).toLocaleString();
+                }
+            }
+
             resultsDiv.innerHTML = `
-                <p><strong>Nombre:</strong> ${fname} ${lname}</p>
+                <p><strong>Name:</strong> ${fname} ${lname}</p>
                 <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Teléfono:</strong> ${phone}</p>
-                <p><strong>Organización:</strong> ${org}</p>
-                <p><strong>Fecha de registro:</strong> ${new Date(timestamp).toLocaleString()}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Organization:</strong> ${org}</p>
+                <p><strong>Job Title:</strong> ${title}</p>
+                <p><strong>Membership Level:</strong> ${membership.toUpperCase()}</p>
+                <p><strong>Registration Date:</strong> ${registrationDate}</p>
             `;
         });
     </script>

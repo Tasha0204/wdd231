@@ -1,5 +1,4 @@
 :root {
-   
     --primary-color: #003366;
     --secondary-color: #ff9900;
     --secondary-hover: #e68a00;
@@ -10,11 +9,9 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --modal-overlay: rgba(0, 0, 0, 0.5);
     
-   
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
-
 
 body {
     font-family: var(--body-font);
@@ -23,7 +20,6 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
 }
-
 
 header {
     background-color: var(--primary-color);
@@ -88,14 +84,18 @@ nav {
     color: var(--primary-color);
 }
 
-
 .join-main {
-    max-width: 600px;
+    max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
+}
+
+form {
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 15px var(--shadow-color);
+    padding: 2rem;
+    margin-bottom: 3rem;
 }
 
 .form-group {
@@ -121,7 +121,9 @@ nav {
     box-sizing: border-box;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     border-color: var(--secondary-color);
     outline: none;
 }
@@ -143,33 +145,49 @@ nav {
     background-color: var(--secondary-hover);
 }
 
-/* Membership Grid & Cards */
-.membership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+/* Animación de carga inicial para las tarjetas (Requisito 6) */
+@keyframes cardLoadIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .membership-card {
-    padding: 20px;
+    background-color: var(--white);
+    padding: 25px 20px;
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s;
-    animation: fadeIn 2s ease-in;
-    margin: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    animation: cardLoadIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
+
+.membership-card:nth-child(1) { animation-delay: 0.1s; }
+.membership-card:nth-child(2) { animation-delay: 0.2s; }
+.membership-card:nth-child(3) { animation-delay: 0.3s; }
+.membership-card:nth-child(4) { animation-delay: 0.4s; }
 
 .membership-card:hover {
     transform: scale(1.05);
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 
 .modal { 
     display: none; 
@@ -184,12 +202,13 @@ nav {
 
 .modal-content { 
     background: var(--white); 
-    margin: 10% auto; 
+    margin: 15% auto; 
     padding: 25px; 
-    width: 80%; 
+    width: 85%; 
     max-width: 500px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
 }
 
 .modal-content h3 {
@@ -212,7 +231,6 @@ nav {
     line-height: 1.5;
 }
 
-/* Botón de cerrar del Modal */
 .close-btn {
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -231,14 +249,13 @@ nav {
     background-color: var(--secondary-hover);
 }
 
-
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 2rem 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-size: 0.9rem;
-    line-height: 1.6;
 }
 
 .footer-container {
@@ -250,45 +267,28 @@ footer {
     margin: 0 auto;
 }
 
-footer p {
-    margin: 0.3rem 0;
-}
-
-.footer-social {
+.social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
-.footer-social a {
-    color: var(--white);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s;
+.social-icons img {
+    filter: brightness(0) invert(1); 
+    transition: transform 0.3s;
 }
 
-.footer-social a:hover {
-    color: var(--secondary-color);
+.social-icons img:hover {
+    transform: scale(1.2);
 }
-
 
 @media (min-width: 768px) {
     .footer-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; 
-        align-items: center; 
-        gap: 2rem;
+        align-items: center;
     }
-
-    .footer-info {
-        text-align: left; 
-    }
-
-    .footer-social {
-        text-align: center; 
-    }
-
-    .footer-meta {
-        text-align: right; 
-    }
+    .footer-info { text-align: left; }
+    .social-icons { justify-content: center; }
+    .footer-copy { text-align: right; }
 }
