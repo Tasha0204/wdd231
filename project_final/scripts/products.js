@@ -1,71 +1,37 @@
+import { loadProducts, filterProducts } from './menu-handler.js';
+import { initializeTheme } from './theme-manager.js';
 
-    const products = [
-        {
-            name: "Cappuccino",
-            description: "Café espresso con leche vaporizada y espuma.",
-            price: 12.00,
-            image: "images/cappuccino.jpg"
-        },
-        {
-            name: "Latte",
-            description: "Suave mezcla de espresso y leche.",
-            price: 13.00,
-            image: "images/latte.jpg"
-        },
-        {
-            name: "Mocha",
-            description: "Café con chocolate y crema.",
-            price: 15.00,
-            image: "images/mocha.jpg"
-        },
-        {
-            name: "Sánguche de Pollo",
-            description: "Pollo deshilachado, lechuga y mayonesa.",
-            price: 14.00,
-            image: "images/pollo.jpg"
-        },
-        {
-            name: "Sánguche de Jamón y Queso",
-            description: "Jamón artesanal y queso fundido.",
-            price: 13.00,
-            image: "images/jamonqueso.jpg"
-        },
-        {
-            name: "Cheesecake",
-            description: "Pastel cremoso con base de galleta.",
-            price: 10.00,
-            image: "images/cheesecake.jpg"
-        },
-        {
-            name: "Torta de Chocolate",
-            description: "Bizcocho húmedo con cobertura de chocolate.",
-            price: 11.00,
-            image: "images/chocolatecake.jpg"
-        }
-    ];
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the saved theme or background settings
+    initializeTheme();
 
-    displayProducts(products);
-}
+    // Synchronize the current year dynamically in the footer
+    const currentYearSpan = document.getElementById('currentyear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
 
-function displayProducts(products) {
-    const container = document.getElementById('coffee-container');
+    // Update dynamically the last modification field
+    const lastModifiedSpan = document.getElementById('lastModified');
+    if (lastModifiedSpan) {
+        lastModifiedSpan.textContent = document.lastModified;
+    }
 
-    if (!container) return;
+    // Initial load of the products in the grid
+    if (document.getElementById('all-pets-grid')) {
+        loadProducts();
+    }
+    
+    // Support for featured items section on landing page if it exists
+    if (document.getElementById('featured-pets-grid')) {
+        loadProducts(true);
+    }
 
-    container.innerHTML = '';
-
-    products.forEach(product => {
-        const card = document.createElement('div');
-
-        card.classList.add('product-card');
-
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" loading="lazy">
-            <h4>${product.name}</h4>
-            <p>${product.description}</p>
-            <p><strong>S/ ${product.price.toFixed(2)}</strong></p>
-        `;
-
-        container.appendChild(card);
-    });
-}
+    // Listen for category selection updates (Filters)
+    const filterSelect = document.getElementById('filter');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', (event) => {
+            filterProducts(event.target.value);
+        });
+    }
+});

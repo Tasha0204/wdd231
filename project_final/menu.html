@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Cafeteria Horizonte</title>
+    <meta name="description" content="Explore our exquisite menu of select coffees, artisanal burgers, fresh sandwiches, and traditional cakes.">
+    <meta name="author" content="Tasha Vidal">
+    <meta property="og:title" content="Our Products - Cafeteria Horizonte">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Explore our menu of select coffees, artisanal burgers, and traditional cakes.">
+    <meta property="og:image" content="images/logomarca.png">
+    <meta property="og:url" content="https://tashavidal.github.io/wdd231/finalproject/">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/basemenu.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/componentsmenu.css">
+    <script src="scripts/products.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logomarca.png" alt="Cafeteria Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafeteria Horizonte</p>
+        </div>
+        <div class="header-controls">
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Products</a></li>
+                    <li><a href="join.html">Booking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <h1>Explore Our Menu</h1>
+            <p>Discover the perfect flavor for every moment of the day. Choose from our wide variety of fresh and artisanal options.</p>
+        </section>
+        
+        <div id="pet-gallery">
+            <div class="filter-controls">
+                <label for="filter">Filter by:</label>
+                <select id="filter" name="filter">
+                    <option value="all">Full Menu</option>
+                    <option value="Coffee">Coffees</option>
+                    <option value="Burger">Burgers</option>
+                    <option value="Sandwich">Sandwiches</option>
+                    <option value="Cake">Cakes</option>
+                </select>
+            </div>
+            <div id="all-pets-grid" class="pet-grid">
+                <p class="loading-message">Loading delicacies...</p>
+            </div>
+        </div>
+    </main>
+
+    <dialog id="pet-modal">
+        <div id="modal-content"></div>
+        <button id="modal-close-button" aria-label="Close window">Close</button>
+    </dialog>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>PERU Chamber of Commerce</p>
+                <p>peru@gmail.com.ph</p>
+                <p>PERU, LIMA City</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy;<span id="currentyear">2026</span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Peru</p>
+                <p>Last Update: <span id="lastModified">01/06/2026</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

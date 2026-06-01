@@ -1,47 +1,50 @@
 let allProductsData = [];
 
+// 1. Get data from JSON file
 const getProductsData = async () => {
     if (allProductsData.length > 0) {
         return allProductsData;
     }
     try {
-        const response = await fetch('data/products.json');
+        const response = await fetch('data/product.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         allProductsData = await response.json();
         return allProductsData;
     } catch (error) {
-        console.error("Failed to fetch product data:", error);
+        console.error("Error loading products JSON file:", error);
         return [];
     }
 };
 
+// 2. Render products in the HTML container
 const renderProducts = (products, containerId) => {
     const container = document.getElementById(containerId);
     if (!container) return;
     container.innerHTML = '';
     
     if (products.length === 0) {
-        container.innerHTML = '<p>No se encontraron productos en esta categoría.</p>';
+        container.innerHTML = '<p>No products found in this category.</p>';
         return;
     }
     
     products.forEach((product, index) => {
         const productCard = document.createElement('div');
-        productCard.className = 'pet-card'; // Mantiene la clase CSS existente para no romper estilos
-        productCard.dataset.productId = product.id;
+        productCard.className = 'pet-card'; 
+        productCard.setAttribute('data-product-id', product.id);
         
-        // Lazy loading a partir de la primera fila
         const lazyLoadAttribute = index > 2 ? 'loading="lazy"' : '';
 
+        // CORRECCIÓN: Agregada la línea de Description dentro de la tarjeta principal
         productCard.innerHTML = `
             <img src="${product.imageUrl}" alt="${product.name} - ${product.type}" ${lazyLoadAttribute}>
             <div class="pet-card-info">
                 <h3>${product.name}</h3>
-                <p><strong>Categoría:</strong> ${product.category}</p>
-                <p><strong>Precio:</strong> ${product.price}</p>
-                <p><strong>Nota:</strong> ${product.tags}</p>
+                <p><strong>Category:</strong> ${product.category}</p>
+                <p><strong>Price:</strong> ${product.price}</p>
+                <p><strong>Note:</strong> ${product.tags}</p>
+                <p><strong>Description:</strong> ${product.description}</p>
             </div>
         `;
         container.appendChild(productCard);
@@ -49,6 +52,7 @@ const renderProducts = (products, containerId) => {
     addCardEventListeners();
 };
 
+// 3. Main load function (Exported for products.js)
 export const loadProducts = async (featuredOnly = false) => {
     const products = await getProductsData();
     if (featuredOnly) {
@@ -60,15 +64,17 @@ export const loadProducts = async (featuredOnly = false) => {
         featuredProducts.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'pet-card';
-            productCard.dataset.productId = product.id;
+            productCard.setAttribute('data-product-id', product.id);
             
+            // CORRECCIÓN: También agregada aquí por si usas las tarjetas destacadas en la Home
             productCard.innerHTML = `
                 <img src="${product.imageUrl}" alt="${product.name}">
                 <div class="pet-card-info">
                     <h3>${product.name}</h3>
-                    <p><strong>Categoría:</strong> ${product.category}</p>
-                    <p><strong>Precio:</strong> ${product.price}</p>
-                    <p><strong>Nota:</strong> ${product.tags}</p>
+                    <p><strong>Category:</strong> ${product.category}</p>
+                    <p><strong>Price:</strong> ${product.price}</p>
+                    <p><strong>Note:</strong> ${product.tags}</p>
+                    <p><strong>Description:</strong> ${product.description}</p>
                 </div>
             `;
             container.appendChild(productCard);
@@ -79,30 +85,43 @@ export const loadProducts = async (featuredOnly = false) => {
     }
 };
 
+// 4. Filter function by category (Exported for products.js)
 export const filterProducts = (category) => {
-    const filtered = category === 'all' 
-        ? allProductsData 
-        : allProductsData.filter(product => product.category.toLowerCase() === category.toLowerCase());
+    if (category === 'all') {
+        renderProducts(allProductsData, 'all-pets-grid');
+        return;
+    }
+
+    const normalizeText = (str) => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    const filtered = allProductsData.filter(product => 
+        normalizeText(product.category) === normalizeText(category)
+    );
     renderProducts(filtered, 'all-pets-grid');
 };
 
+// Modal logic / Pop-up window when a product is clicked
 const modal = document.getElementById('pet-modal');
 const modalContent = document.getElementById('modal-content');
 const closeModalButton = document.getElementById('modal-close-button');
 
 const openModal = (productId) => {
-    const product = allProductsData.find(p => p.id == productId);
-    if (!product || !modal) return;
+    const product = allProductsData.find(p => Number(p.id) === Number(productId));
+    
+    if (!product || !modal) {
+        console.error("Product not found for ID:", productId);
+        return;
+    }
     
     modalContent.innerHTML = `
         <img src="${product.imageUrl}" alt="${product.name}">
         <div>
             <h2>${product.name}</h2>
-            <p><strong>Categoría:</strong> ${product.category}</p>
-            <p><strong>Tipo:</strong> ${product.type}</p>
-            <p><strong>Precio:</strong> ${product.price}</p>
-            <p><strong>Etiqueta:</strong> ${product.tags}</p>
-            <p><strong>Descripción:</strong> ${product.description}</p>
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p><strong>Type:</strong> ${product.type}</p>
+            <p><strong>Price:</strong> ${product.price}</p>
+            <p><strong>Tag:</strong> ${product.tags}</p>
+            <p><strong>Description:</strong> ${product.description}</p>
         </div>
     `;
     modal.showModal();
@@ -121,18 +140,8 @@ const addCardEventListeners = () => {
     const productCards = document.querySelectorAll('.pet-card');
     productCards.forEach(card => {
         card.addEventListener('click', () => {
-            openModal(card.dataset.productId);
+            const productId = card.getAttribute('data-product-id');
+            openModal(productId);
         });
     });
 };
-
-// Inicialización de la escucha del selector de filtros
-document.addEventListener('DOMContentLoaded', () => {
-    const filterSelect = document.getElementById('filter');
-    if (filterSelect) {
-        filterSelect.addEventListener('change', (e) => {
-            filterProducts(e.target.value);
-        });
-    }
-    loadProducts();
-});

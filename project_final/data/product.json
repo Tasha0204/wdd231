@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Intense Espresso",
+    "category": "Coffee",
+    "type": "Espresso",
+    "price": "S/. 7.00",
+    "description": "A concentrated shot of pure coffee with a thick layer of crema. Perfect for a morning energy boost.",
+    "imageUrl": "images/intenseespresso.jpg",
+    "tags": "Hot"
+  },
+  {
+    "id": 2,
+    "name": "Horizon Burger",
+    "category": "Burger",
+    "type": "Artisanal",
+    "price": "S/. 22.00",
+    "description": "200g of premium beef, melted cheddar cheese, crispy bacon, and our secret house sauce on brioche pan.",
+    "imageUrl": "images/horizonburger.jpg",
+    "tags": "Premium"
+  },
+  {
+    "id": 3,
+    "name": "Caprese Sandwich",
+    "category": "Sandwich",
+    "type": "Ciabatta",
+    "price": "S/. 15.00",
+    "description": "Fresh tomato slices, melted mozzarella, and basil leaves with a touch of pesto on artisanal ciabatta bread.",
+    "imageUrl": "images/capresesandwich.jpg",
+    "tags": "Vegetarian"
+  },
+  {
+    "id": 4,
+    "name": "Tres Leches Cake",
+    "category": "Cake",
+    "type": "Traditional",
+    "price": "S/. 12.00",
+    "description": "Spongy sponge cake soaked in our traditional three milks mix, decorated with a light layer of meringue and cinnamon.",
+    "imageUrl": "images/tresleches.jpg",
+    "tags": "Dessert"
+  },
+  {
+    "id": 5,
+    "name": "Supreme Cappuccino",
+    "category": "Coffee",
+    "type": "With Milk",
+    "price": "S/. 9.50",
+    "description": "Perfect balance between espresso, steamed milk, and a generous layer of milk foam, dusted with cocoa.",
+    "imageUrl": "images/supremecappuccino.jpg",
+    "tags": "Hot"
+  },
+  {
+    "id": 6,
+    "name": "Crispy BBQ Burger",
+    "category": "Burger",
+    "type": "Artisanal",
+    "price": "S/. 24.00",
+    "description": "Grilled beef, breaded onion rings, American cheese, and our irresistible smoky barbecue sauce.",
+    "imageUrl": "images/crispyburger.jpg",
+    "tags": "Premium"
+  },
+  {
+    "id": 7,
+    "name": "Chicken and Avocado Sandwich",
+    "category": "Sandwich",
+    "type": "Whole Wheat",
+    "price": "S/. 16.50",
+    "description": "Shredded chicken breast, fresh avocado slices, light mayonnaise, and organic lettuce on whole wheat multi-cereal bread.",
+    "imageUrl": "images/chickenandsandwich.jpg",
+    "tags": "Healthy"
+  },
+  {
+    "id": 8,
+    "name": "Passion Fruit Cheesecake",
+    "category": "Cake",
+    "type": "Fruity",
+    "price": "S/. 13.00",
+    "description": "Crispy cookie base with a smooth cream cheese filling, topped with a bright and tangy pure passion fruit pulp glaze.",
+    "imageUrl": "images/passioncheesecake.jpg",
+    "tags": "Dessert"
+  },
+  {
+    "id": 9,
+    "name": "Iced Vanilla Latte",
+    "category": "Coffee",
+    "type": "Cold",
+    "price": "S/. 11.00",
+    "description": "Espresso combined with cold milk, premium vanilla syrup, and ice cubes. Ideal to refresh your afternoon.",
+    "imageUrl": "images/icedvanilla.jpg",
+    "tags": "Cold"
+  },
+  {
+    "id": 10,
+    "name": "Real Veggie Burger",
+    "category": "Burger",
+    "type": "Vegetarian",
+    "price": "S/. 20.00",
+    "description": "Homemade patty made of quinoa and lentils, fresh spinach, tomato, and avocado cream on a classic burger bun.",
+    "imageUrl": "images/realveggieburger.jpg",
+    "tags": "Vegetarian"
+  },
+  {
+    "id": 11,
+    "name": "Classic Triple Sandwich",
+    "category": "Sandwich",
+    "type": "Crustless",
+    "price": "S/. 10.00",
+    "description": "The afternoon essential: perfect layers of avocado, fresh tomato, and hard-boiled egg with a touch of homemade mayonnaise.",
+    "imageUrl": "images/classictriple.jpg",
+    "tags": "Healthy"
+  },
+  {
+    "id": 12,
+    "name": "Blueberry Muffin",
+    "category": "Cake",
+    "type": "Individual",
+    "price": "S/. 6.50",
+    "description": "Small moist muffin packed with fresh blueberries that burst in the oven, with a hint of vanilla essence.",
+    "imageUrl": "images/blueberrymuffin.jpg",
+    "tags": "Dessert"
+  },
+  {
+    "id": 13,
+    "name": "Intense Americano",
+    "category": "Coffee",
+    "type": "Espresso",
+    "price": "S/. 7.50",
+    "description": "Our classic espresso diluted with hot water to prolong the enjoyment of its woody notes.",
+    "imageUrl": "images/intenseamericano.jpg",
+    "tags": "Hot"
+  },
+  {
+    "id": 14,
+    "name": "Ham and Cheese Croissant",
+    "category": "Sandwich",
+    "type": "Puff Pastry",
+    "price": "S/. 12.50",
+    "description": "Pure butter puff pastry croissant filled with local ham and melted Edam cheese in the oven.",
+    "imageUrl": "images/croissant.jpg",
+    "tags": "Hot"
+  },
+  {
+    "id": 15,
+    "name": "Chocolate Fudge Cake",
+    "category": "Cake",
+    "type": "Chocolate",
+    "price": "S/. 14.00",
+    "description": "For chocolate lovers: layers of moist cocoa sponge cake filled and covered with a thick artisanal fudge.",
+    "imageUrl": "images/chocolate-cake.webp",
+    "tags": "Dessert"
+  }
+]
