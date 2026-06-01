@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Opcion1",
+    "address": "Av. El Sol 123, Cusco",
+    "phone": "+51 925 393 116",
+    "website":"https://illakunturtravel.com/es/",
+    "image": "images/illatours.png",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Lima Tech Solutions",
+    "address": "Calle Las Begonias 456, San Isidro",
+    "phone": "+51 1 445566",
+    "website":"https://www.limatech.us/",
+    "image": "images/limatech.png",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Arequipa Export",
+    "address": "Calle Mercaderes 789, Arequipa",
+    "phone": "+51 940187145",
+    "website": "https://www.arequipatoursagencia.com/",
+    "image": "images/arequipa.png",
+    "membershipLevel": "Bronze"
+  },
+  {
+    "name": "Andina Textiles",
+    "address": "Jr. Sebastián Barranca 1412, Lima 15018",
+    "phone": "+51 933 149 487",
+    "website": "http://www.textilandina.com/",
+    "image": "images/textil.png",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Amazonas Energia Solar",
+    "address": "Malecón Tarapacá 202, Iquitos",
+    "phone": "+51 65 554433",
+    "website": "https://amazonasenergiasolar.com/",
+    "image": "images/amazonas.png",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Pisco Don Alvaro",
+    "address": "Panamericana Sur Km 300, Ica",
+    "phone": "+51 943 830 762",
+    "website": "https://piscodonalvaro.pe",
+    "image": "images/pisco.png",
+    "membershipLevel": "Bronze"
+  },
+  {
+    "name": "Innovacion",
+    "address": "Av. Argentina 500, Callao",
+    "phone": "+51 1 998877",
+    "website": "https://innovacion.pe",
+    "image": "images/innovacion_logo.png",
+    "membershipLevel": "Gold"
+  }
+]
