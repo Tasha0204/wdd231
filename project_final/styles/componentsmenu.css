@@ -1,7 +1,7 @@
-/* Ocultar botones innecesarios por completo */
+
 #menu-button,
 #theme-toggle-button {
-    display: none !important;
+    display: none;
 }
 
 /* Call-to-Action Button */
