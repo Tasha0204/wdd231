@@ -30,7 +30,7 @@ if (!lastVisit) {
     if (daysBetween < 1) {
 
         visitMessage.textContent =
-        "Back so soon! Awesome!";
+        "Hello! It's great to see you again. Explore our tourist attractions and learn more about it.";
 
     } else if (daysBetween === 1) {
 
