@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Machu Picchu",
+    "address": "Cusco, Peru",
+    "image": "images/machupicchu.webp",
+    "description": "One of the new seven wonders of the world.",
+    "url": "https://www.machupicchu.gob.pe/"
+  },
+  {
+    "name": "Plaza Mayor de Lima",
+    "address": "Historic Center, Lima",
+    "image": "images/plazamayorlima.webp",
+    "description": "Historic and cultural center of the capital city.",
+    "url": "https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=3348"
+  },
+  {
+    "name": "Lake Titicaca",
+    "address": "Puno, Peru",
+    "image": "images/lagotiticaca.webp",
+    "description": "The highest navigable lake in the world.",
+    "url": "https://www.lagotiticacaperu.com/"
+  },
+  {
+    "name": "Nazca Lines",
+    "address": "Nazca, Ica",
+    "image": "images/nasca.webp",
+    "description": "Giant geoglyphs visible from the air.",
+    "url": "https://nascaperu.com/"
+  },
+  {
+    "name": "Colca Canyon",
+    "address": "Arequipa, Peru",
+    "image": "images/colca.webp",
+    "description": "One of the deepest canyons on the planet.",
+    "url": "https://www.colcaperu.gob.pe/destinos"
+  },
+  {
+    "name": "Huacachina",
+    "address": "Ica, Peru",
+    "image": "images/huacachina.webp",
+    "description": "A natural oasis surrounded by sand dunes.",
+    "url": "https://www.huacachina.com/es/"
+  },
+  {
+    "name": "Chan Chan",
+    "address": "La Libertad, Peru",
+    "image": "images/chanchan.webp",
+    "description": "The largest adobe city in the Americas.",
+    "url": "https://museos.cultura.pe/museos/museo-de-sitio-de-chan-chan"
+  },
+  {
+    "name": "Huascaran National Park",
+    "address": "Ancash, Peru",
+    "image": "images/huascaran.webp",
+    "description": "A natural reserve featuring snow-capped mountains.",
+    "url": "https://visitaareasnaturales.sernanp.gob.pe/anps/parque-nacional-huascaran/"
+  }
+]

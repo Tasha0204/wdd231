@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Chamber of Commerce - Join</title>
+    <meta name="description" content="Join page with a business application form and interactive tiers to view membership benefits.">
+    <meta name="author" content="Tasha Vidal">
+    
+    <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Chamber of Commerce - Join Us Today">
+    <meta property="og:description" content="Apply for membership, select your tier, and discover exclusive benefits for your business.">
+    <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
+    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles/basediscover.css">
+    <link rel="stylesheet" href="styles/largediscover.css" media="(min-width: 768px)">
+    
+    <script defer src="scripts/discover.js"></script>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-container">
+        <img src="images/logomarca.png"
+             alt="Chamber of Commerce Logo"
+             width="80"
+             height="80">
+
+        <p class="header-title">PERU Chamber of Commerce</p>
+    </div>
+
+    <nav>
+        <button id="menu-toggle" aria-label="Open navigation menu">
+            ☰
+        </button>
+
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="discovery.html" class="active">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+    <h1>Discover Peru</h1>
+
+    <div id="visit-message">
+        Welcome!
+    </div>
+
+    <section id="discover-grid">
+
+        </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-info">
+            <p>PERU Chamber of Commerce</p>
+            <p>peru@gmail.com</p>
+            <p>Lima, Peru</p>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.png"
+                     alt="Facebook"
+                     width="30"
+                     height="30">
+            </a>
+
+            <a href="https://www.youtube.com/" target="_blank">
+                <img src="images/youtube.png"
+                     alt="Youtube"
+                     width="30"
+                     height="30">
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.png"
+                     alt="LinkedIn"
+                     width="30"
+                     height="30">
+            </a>
+        </div>
+         <div class="footer-copy">
+             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+            <p>Lima, Peru</p>
+            <p>Last Update: <span id="lastModified"></span></p>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
