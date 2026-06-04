@@ -48,39 +48,46 @@ async function fetchWeather() {
 }
 
 function displayCurrentWeather(data) {
-    const currentContainer = document.getElementById('weather-current');
-    if (!currentContainer) return;
+    const container = document.getElementById('weather-current');
+    if (!container) return;
 
     const current = data.list[0];
     const temp = Math.round(current.main.temp);
     const desc = current.weather[0].description;
     
-    currentContainer.innerHTML = `
-        <p><strong>Actual:</strong> ${temp}°C - ${desc.charAt(0).toUpperCase() + desc.slice(1)}</p>
-        <p>Humedad: ${current.main.humidity}%</p>
+    const icon = desc.includes('nube') ? '☁️' : '☀️';
+
+    container.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <span style="font-size: 3rem;">${icon}</span>
+            <div>
+                <h2 style="font-size: 2rem; margin: 0;">${temp}°C</h2>
+                <p style="margin: 0; color: #666;">${desc.charAt(0).toUpperCase() + desc.slice(1)}</p>
+                <p style="margin: 0; font-size: 0.9rem;">Humedad: ${current.main.humidity}%</p>
+            </div>
+        </div>
     `;
 }
 
 function displayForecast(data) {
-    const forecastContainer = document.getElementById('weather-forecast');
-    if (!forecastContainer) return;
-
-    forecastContainer.innerHTML = ''; 
-    const dailyData = [data.list[8], data.list[16], data.list[24]];
+    const container = document.getElementById('weather-forecast');
+    if (!container) return;
     
-    dailyData.forEach(day => {
-        const date = new Date(day.dt_txt);
-        const options = { weekday: 'long' };
-        const dayName = date.toLocaleDateString('es-ES', options);
+    container.innerHTML = ''; 
+    
+
+    [data.list[8], data.list[16], data.list[24]].forEach(day => {
+       
+        const date = new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'long' });
         const temp = Math.round(day.main.temp);
         
-        const dayElement = document.createElement('div');
-        dayElement.classList.add('forecast-day');
-        dayElement.innerHTML = `
-            <p><strong>${dayName.charAt(0).toUpperCase() + dayName.slice(1)}</strong></p>
-            <p>${temp}°C</p>
-        `;
-        forecastContainer.appendChild(dayElement);
+  
+        const emoji = temp > 20 ? '☀️' : '☁️'; 
+        
+        container.innerHTML += `
+            <div class="forecast-day">
+                <p><strong>${date}</strong></p> <p class="forecast-icon">${emoji}</p>
+                <p>${temp}°C</p>
+            </div>`;
     });
 }
-

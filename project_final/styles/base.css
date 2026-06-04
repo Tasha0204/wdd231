@@ -156,22 +156,22 @@ section:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 
-/* Modificado: Títulos H2 principales con la línea naranja inferior */
 section h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  text-transform: capitalize; /* Convierte "promotions" a "Promotions" en la pantalla */
-  border-bottom: 3px solid var(--secondary-color); /* Línea naranja del Site Plan */
-  padding-bottom: 0.5rem; /* Espacio para separar el texto de la línea */
+  text-transform: capitalize;
+  text-align: center;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  display: block;      
 }
-
-/* Modificado: Títulos H3 sin la línea inferior para subsecciones */
 section h3 {
   font-family: var(--heading-font);
   color: var(--primary-color);
   margin-bottom: 1rem;
+  text-align: center; 
 }
 
 .spotlight-grid {
@@ -207,6 +207,49 @@ section h3 {
   border-radius: 8px 8px 0 0;
   display: block;
 }
+
+/* ==========================================================================
+   ☕ NUEVOS ESTILOS PARA EL PRONÓSTICO DEL CLIMA (HORIZONTAL + EMOJIS)
+   ========================================================================== */
+.forecast-container {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 10px 6px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+}
+
+.day-name {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.forecast-icon {
+  font-size: 1.6rem; /* Hace que tus emojis resalten de forma bonita */
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.forecast-day strong {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* ========================================================================== */
 
 /* Footer con el borde decorativo superior naranja */
 footer {
@@ -269,5 +312,14 @@ h1 {
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* Ajuste responsivo para pantallas pequeñas de celular */
+  .forecast-container {
+    gap: 6px;
+  }
+  
+  .day-name {
+    font-size: 0.8rem;
   }
 }
