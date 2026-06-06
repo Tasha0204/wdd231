@@ -5,25 +5,14 @@ body {
     min-height: 100vh;
 }
 
+/* Nota: Quitamos background-color, color, padding, display, etc. de aquí 
+   porque ya se aplican en basemenu.css. Dejamos solo lo único de esta página */
 header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: auto;
-    padding: 1.5rem 5%;
-}
-
+/* Nota: Dejamos solo las propiedades únicas de diseño estructural 
+   que no existían en basemenu.css */
 main {
     flex-grow: 1;
     padding: 2rem 5%;

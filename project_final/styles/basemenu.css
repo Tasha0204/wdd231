@@ -205,15 +205,13 @@ form {
 .close-btn:hover {
     background-color: var(--secondary-hover);
 }
-
 footer {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 2rem 1rem;
-    margin-top: 4rem;
+    padding: 1.5rem 5%;
+    margin-top: auto;  
     font-size: 0.9rem;
 }
-
 .footer-container {
     display: flex;
     flex-direction: column;
