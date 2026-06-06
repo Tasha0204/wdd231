@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #5C3A21; 
     --secondary-color: #ff9900;
@@ -21,10 +22,11 @@
 
 body {
     font-family: var(--body-font);
-    margin: 0;
-    padding: 0;
     color: var(--text-color);
     background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -35,6 +37,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 5px solid var(--secondary-color); 
+    position: relative;
 }
 
 .logo-container {
@@ -64,7 +67,7 @@ header {
 }
 
 #nav-menu li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     padding: 12px 18px;
     border-radius: 6px;
@@ -96,7 +99,6 @@ form {
     padding: 2.5rem;
     max-width: 650px;
     margin: 0 auto 3rem auto;
-    box-sizing: border-box;
 }
 
 .form-group {
@@ -119,7 +121,6 @@ form {
     border-radius: 6px;
     font-size: 1rem;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -205,6 +206,7 @@ form {
 .close-btn:hover {
     background-color: var(--secondary-hover);
 }
+
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -212,6 +214,7 @@ footer {
     margin-top: auto;  
     font-size: 0.9rem;
 }
+
 .footer-container {
     display: flex;
     flex-direction: column;
