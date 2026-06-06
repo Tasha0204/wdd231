@@ -1,0 +1,49 @@
+
+
+:root {
+  --primary-color: #5C3A21; 
+  --secondary-color: #ff9900;
+  --text-color: #333333;
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+}
+
+/* Título principal de la página */
+.page-title {
+  display: block;
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Contenedor de las tarjetas de Misión y Visión */
+.about-page {
+  margin-top: 1rem;
+}
+
+/* Estilo para las tarjetas individuales de Misión y Visión */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+/* Contenedor del emoji decorativo */
+.about-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Bloque de texto descriptivo */
+.about-card p {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-top: 1rem;
+}

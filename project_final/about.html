@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Cofateria horizonte</title>
+    <title>Cafeteria horizonte</title>
     <meta name="description" content="Homepage of my Chamber of Commerce project. Here you'll find local businesses, upcoming events, and the weather in our hometown.">
     <meta name="author" content="Tasha Vidal">
-    
     <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +16,9 @@
     <meta property="og:description" content="Discover professional networking opportunities, upcoming events, and business spotlights at the Chamber of Commerce.">
     <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
     <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
-    <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
-    
+    <link rel="stylesheet" href="styles/baseabout.css">
     <script defer src="scripts/mainindex.js"></script>
-    <script defer src="scripts/promotions.js"></script>
 </head>
 <body>
 
@@ -36,66 +30,47 @@
         <nav>
             <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
             <ul id="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                 <li><a href="about.html">About</a></li>
+                <li><a href="index.html" >Home</a></li>
+                 <li><a href="about.html"class="active">About</a></li>
                 <li><a href="menu.html">Product</a></li>
                 <li><a href="join.html">Booking</a></li>
+               
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1 class="main-title">Welcome</h1>
+        <h1 class="page-title">Sobre Nosotros</h1>
 
-        <section class="hero-section">
-            <picture>
-                <source srcset="images/cofee.png" media="(min-width: 768px)">
-                <img src="images/hero.jpg" alt="Panoramic city view and professional business environment" class="hero-image" width="1200" height="500">
-            </picture>
-            <div class="cta-overlay">
-                <h2>Grow Your Business Today</h2>
-                <p>Join the largest professional network in the region.</p>
-                <a href="join.html" class="cta-button">Join the Chamber!</a>
-            </div>
-        </section>
-
-        <div class="grid-container">
+        <!-- Contenedor Grid que ya creaste en tu CSS -->
+        <div class="grid-container about-page">
             
-            <section class="events-card">
-                <h3>Upcoming Events</h3>
-                <div class="event-item">
-                    <h4>Networking Conference 2026</h4>
-                    <p>📅 May 28 | 🕒 6:00 PM</p>
-                    <p>Connect with over 50 local startups and established enterprises.</p>
-                </div>
-                <div class="event-item">
-                    <h4>Digital Marketing Workshop</h4>
-                    <p>📅 June 05 | 🕒 4:00 PM</p>
-                    <p>Learn actionable SEO optimization and digital ad strategies.</p>
-                </div>
+            <!-- Bloque de Misión -->
+            <section class="about-card">
+                <div class="about-icon">🎯</div>
+                <h2>Nuestra Misión</h2>
+                <p>
+                    Ofrecer soluciones web innovadoras y de alta calidad que impulsen el éxito digital 
+                    de nuestros clientes. Nos comprometemos con la excelencia técnica, el diseño intuitivo 
+                    y el desarrollo de proyectos accesibles que generen un impacto positivo en nuestra comunidad.
+                </p>
             </section>
 
-            <section class="weather-card">
-                <h3>Current Weather</h3>
-                <div id="weather-current">
-                    <p>Loading current weather data...</p>
-                </div>
-                <h4>3-Day Forecast</h4>
-                <div id="weather-forecast" class="forecast-container">
-                    </div>
-            </section>
-
-            <section class="spotlight-section">
-                <h3>Promotions</h3>
-                <div id="promotions-container" class="spotlight-grid">
-                    <p>Loading spotlight promotions...</p>
-                </div>
+            <!-- Bloque de Visión -->
+            <section class="about-card">
+                <div class="about-icon">👁️‍🗨️</div>
+                <h2>Nuestra Visión</h2>
+                <p>
+                    Ser un referente líder en el desarrollo web, reconocidos por nuestra capacidad de 
+                    transformar ideas complejas en experiencias digitales extraordinarias. Buscamos evolucionar 
+                    constantemente con las últimas tecnologías para guiar a nuestros socios hacia el futuro digital.
+                </p>
             </section>
 
         </div>
     </main>
 
-    <footer>
+  <footer>
     <div class="footer-container">
         <div class="footer-info">
             <p>PERU Chamber of Commerce</p>
@@ -116,5 +91,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-// promotions.js
 
 function fetchPromotions() {
     // 1. Aquí definimos los datos, incluyendo la ruta de tus imágenes.

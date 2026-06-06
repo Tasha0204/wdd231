@@ -1,3 +1,4 @@
+
 :root {
   --primary-color: #5C3A21; 
   --secondary-color: #ff9900;
@@ -16,13 +17,16 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FDFBF7;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: var(--body-font);
+  background-color: #FDFBF7;
+  color: var(--text-color);
+  line-height: 1.6;
 }
+
+h1 {
+  display: none;
+}
+
 header {
   background-color: var(--primary-color);
   color: var(--white);
@@ -30,9 +34,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 5px solid var(--secondary-color); /* Línea decorativa naranja */
+  border-bottom: 5px solid var(--secondary-color); 
 }
-
 
 .logo-container {
   display: flex;
@@ -78,6 +81,7 @@ header {
 .hero-section {
   position: relative;
   overflow: hidden;
+  margin-top: 2rem; 
 }
 
 .hero-image {
@@ -85,11 +89,6 @@ header {
   height: 650px;
   object-fit: cover;
   display: block;
-}
-.hero-section {
-  position: relative;
-  overflow: hidden;
-  margin-top: 2rem; 
 }
 
 .cta-overlay {
@@ -167,12 +166,14 @@ section h2 {
   padding-bottom: 0.5rem;
   display: block;      
 }
+
 section h3 {
   font-family: var(--heading-font);
   color: var(--primary-color);
   margin-bottom: 1rem;
   text-align: center; 
 }
+
 
 .spotlight-grid {
   display: flex;
@@ -208,11 +209,8 @@ section h3 {
   display: block;
 }
 
-/* ==========================================================================
-   ☕ NUEVOS ESTILOS PARA EL PRONÓSTICO DEL CLIMA (HORIZONTAL + EMOJIS)
-   ========================================================================== */
 .forecast-container {
-  display: flex !important;
+  display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-top: 15px;
@@ -239,7 +237,7 @@ section h3 {
 }
 
 .forecast-icon {
-  font-size: 1.6rem; /* Hace que tus emojis resalten de forma bonita */
+  font-size: 1.6rem; 
   margin-bottom: 6px;
   display: inline-block;
 }
@@ -249,15 +247,12 @@ section h3 {
   color: var(--text-color);
 }
 
-/* ========================================================================== */
-
-/* Footer con el borde decorativo superior naranja */
 footer {
   background-color: var(--primary-color);
   color: white;
   margin-top: 3rem;
   padding: 2rem;
-  border-top: 5px solid var(--secondary-color); /* Combina con el header superior */
+  border-top: 5px solid var(--secondary-color); 
 }
 
 .footer-container {
@@ -266,18 +261,19 @@ footer {
   gap: 2rem;
 }
 
-.footer-social a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.2rem;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.footer-social a:hover {
-  color: var(--secondary-color);
+.social-icons img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
 }
 
-h1 {
-  display: none;
+.social-icons img:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -314,7 +310,6 @@ h1 {
     text-align: center;
   }
 
-  /* Ajuste responsivo para pantallas pequeñas de celular */
   .forecast-container {
     gap: 6px;
   }
