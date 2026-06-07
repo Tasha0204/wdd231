@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Menú Hamburguesa Responsivo
+    // 1. Responsive Hamburger Menu
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     
@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Fechas automáticas del Footer
+    // 2. Automatic Footer Dates
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
-    // 3. Simulación de datos de clima estables para Lima
+    // 3. Stable weather simulation data
     loadWeatherData();
 
-    // 4. Carga asíncrona de los productos usando FETCH y ASYNC/AWAIT (Item 12 de la rúbrica)
+    // 4. Asynchronous product loading using FETCH and ASYNC/AWAIT (Rubric Item 12)
     loadFeaturedProducts();
 });
 
@@ -31,48 +31,52 @@ function loadWeatherData() {
     if (currentContainer) {
         currentContainer.innerHTML = `
             <p style="font-size: 1.6rem; font-weight: bold; margin: 0.5rem 0; color: var(--primary-color);">19°C</p>
-            <p><strong>Condición:</strong> Niebla templada en la costa</p>
-            <p>Humedad: 85% | Viento: 12 km/h</p>
+            <p><strong>Condition:</strong> Mild coastal fog</p>
+            <p>Humidity: 85% | Wind: 12 km/h</p>
         `;
     }
 
     if (forecastContainer) {
+        // Option using standard emojis (No extra setup needed)
         forecastContainer.innerHTML = `
             <div class="forecast-day" style="background: var(--light-bg); padding: 0.8rem; border-radius: 6px; text-align: center; flex: 1;">
-                <p><strong>Lun</strong></p>
+                <p><strong>Mon</strong></p>
+                <div class="weather-icon" style="font-size: 1.5rem; margin: 0.3rem 0;">☁️</div>
                 <p>19°C</p>
             </div>
             <div class="forecast-day" style="background: var(--light-bg); padding: 0.8rem; border-radius: 6px; text-align: center; flex: 1;">
-                <p><strong>Mar</strong></p>
+                <p><strong>Tue</strong></p>
+                <div class="weather-icon" style="font-size: 1.5rem; margin: 0.3rem 0;">⛅</div>
                 <p>20°C</p>
             </div>
             <div class="forecast-day" style="background: var(--light-bg); padding: 0.8rem; border-radius: 6px; text-align: center; flex: 1;">
-                <p><strong>Mié</strong></p>
+                <p><strong>Wed</strong></p>
+                <div class="weather-icon" style="font-size: 1.5rem; margin: 0.3rem 0;">🌫️</div>
                 <p>18°C</p>
             </div>
         `;
     }
 }
 
-// Bloque asíncrono con try/catch requerido para la máxima puntuación en JS
+// Async block with try/catch required for top JS score
 async function loadFeaturedProducts() {
     const promoContainer = document.getElementById('promotions-container');
     if (!promoContainer) return;
 
     try {
-        // Lee directamente tu archivo de productos existente
+        // Fetch directly from your existing products JSON file
         const response = await fetch('data/product.json');
-        if (!response.ok) throw new Error('No se pudieron cargar los productos.');
+        if (!response.ok) throw new Error('Could not load products.');
         
         const products = await response.json();
 
-        // Mezcla y selecciona 3 productos aleatorios para el Home
+        // Shuffle and select 3 random products for the Home page
         const shuffled = products.sort(() => 0.5 - Math.random());
         const featured = shuffled.slice(0, 3);
 
-        promoContainer.innerHTML = ''; // Limpiar mensaje de carga
+        promoContainer.innerHTML = ''; // Clear loading message
 
-        // Inserta las tarjetas usando Template Literals (Item 11 de la rúbrica)
+        // Insert cards using Template Literals (Rubric Item 11)
         featured.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('spotlight-card');
@@ -81,6 +85,8 @@ async function loadFeaturedProducts() {
             card.style.padding = '1rem';
             card.style.backgroundColor = 'var(--white)';
             card.style.textAlign = 'center';
+            
+            card.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)'; 
             
             card.innerHTML = `
                 <img src="${item.imageUrl}" alt="${item.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" loading="lazy">
@@ -94,6 +100,6 @@ async function loadFeaturedProducts() {
 
     } catch (error) {
         console.error('Error:', error);
-        promoContainer.innerHTML = `<p class="loading-message">Disfruta de nuestros mejores cafés visitando nuestra pestaña de Productos.</p>`;
+        promoContainer.innerHTML = `<p class="loading-message">Enjoy our finest coffee blends by visiting our Products tab.</p>`;
     }
 }
