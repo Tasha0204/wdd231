@@ -1,3 +1,6 @@
+/* ==========================================================================
+   VARIABLES GLOBALES Y CONFIGURACIÓN (Sin @import y con Alta Especificidad)
+   ========================================================================== */
 :root {
     --primary-color: #5C3A21; 
     --secondary-color: #ff9900;
@@ -140,10 +143,12 @@ header {
     padding: 0 1rem;
 }
 
+/* CORRECCIÓN DE CONTRASTE DIRECTA: Texto blanco puro sobre el fondo oscuro (Pasa WCAG AA) */
 .cta-overlay h2 {
     font-family: var(--heading-font);
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 
 .cta-overlay p {
@@ -214,9 +219,10 @@ section h2 {
     margin-top: 1rem;
 }
 
+/* CORRECCIÓN DE CONTRASTE DIRECTA: Gris oscuro #555555 sobre blanco (Ratio > 4.5:1 OK) */
 .loading-message {
     font-style: italic;
-    color: #777;
+    color: #555555;
     text-align: center;
     grid-column: 1 / -1;
 }
@@ -252,3 +258,22 @@ footer {
     transform: scale(1.2);
 }
 
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.spotlight-grid div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+section:hover {
+    transform: translateY(-6px); /* Eleva el cuadro 6 píxeles hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Le da una sombra más oscura abajo */
+}
+
+.spotlight-grid div:hover {
+    transform: translateY(-6px); /* Eleva la tarjeta */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Le da la sombra */
+}
