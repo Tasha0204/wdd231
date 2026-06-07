@@ -1,0 +1,117 @@
+/* Estilos del Formulario */
+.form-container, .thankyou-box {
+    background-color: var(--white);
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-top: 6px solid var(--primary-color);
+}
+
+.form-container h1, .thankyou-box h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-container > p, .thankyou-box > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.booking-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.booking-form span {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.booking-form input, .booking-form select, .booking-form textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--paragraph-font);
+    font-size: 1rem;
+    background-color: #fcfcfc;
+}
+
+.booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background-color: var(--white);
+}
+
+.submit-btn, .back-home-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 1.5rem;
+}
+
+.submit-btn:hover, .back-home-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Pantalla de Agradecimiento y datos */
+.success-icon {
+    font-size: 3rem;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+}
+
+.data-display-box {
+    background-color: #f9f6f0;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2rem;
+}
+
+.summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.summary-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.summary-list li:last-child {
+    border-bottom: none;
+}
+
+.timestamp-stamp {
+    margin-top: 1rem;
+    text-align: right;
+    color: #999;
+}

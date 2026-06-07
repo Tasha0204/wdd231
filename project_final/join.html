@@ -3,103 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Chamber of Commerce - Join</title>
-    <meta name="description" content="Join page with a business application form and interactive tiers to view membership benefits.">
+    <title>Booking - Cafetería Horizonte</title>
+    <meta name="description" content="Reserva tu mesa o un espacio de trabajo en Cafetería Horizonte. Completa nuestro formulario seguro.">
     <meta name="author" content="Tasha Vidal">
     
-    <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
-
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Chamber of Commerce - Join Us Today">
-    <meta property="og:description" content="Apply for membership, select your tier, and discover exclusive benefits for your business.">
-    <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
-    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="styles/basejoin.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
-    
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/large.css">
     <script defer src="scripts/join.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="images/logomarca.png" alt="Chamber of Commerce Logo" width="80" height="80">
-            <p class="header-title">PERU Chamber of Commerce</p>
+            <img src="images/logomarca.png" alt="Cafetería Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafetería Horizonte</p>
         </div>
         <nav>
             <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                   <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Product</a></li>
                 <li><a href="join.html" class="active">Booking</a></li>
-                
             </ul>
         </nav>
     </header>
 
-   <main class="join-main">
-    <!-- Título profesional -->
-    <h1>Peru Chamber of Commerce</h1>
-    <h2>Membership & Reservations</h2>
+    <main>
+        <section class="form-container">
+            <h1>Reserva tu Experiencia</h1>
+            <p>Completa tus datos para separar una mesa o un espacio de coworking con nosotros.</p>
+            
+            <form method="get" action="thankyou.html" class="booking-form">
+                <label>
+                    <span>Nombre Completo *</span>
+                    <input type="text" name="name" required placeholder="Ej. Tasha Vidal">
+                </label>
 
-    <!-- Nueva Sección de Reserva -->
-    <form action="thankyou.html" method="get" style="margin-top: 4rem;">
-        <h3>Event/Meeting Reservation</h3>
-        <div class="form-group">
-            <label for="res-name">Nombre Completo</label>
-            <input type="text" id="res-name" name="res-name" required>
-        </div>
-        <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="example@email.com" autocomplete="email">
-    </div>
-<div class="form-group">
-    <label for="phone">Mobile Phone</label>
-    <input type="tel" id="phone" name="phone" required autocomplete="tel">
-</div>
-        
-        <div class="form-group">
-            <label for="res-date">Fecha de Reserva</label>
-            <input type="date" id="res-date" name="res-date" required>
-        </div>
+                <label>
+                    <span>Correo Electrónico *</span>
+                    <input type="email" name="email" required placeholder="ejemplo@correo.com">
+                </label>
 
-        <div class="form-group">
-            <label for="res-people">Número de Personas</label>
-            <input type="number" id="res-people" name="res-people" min="1" required>
-        </div>
-        
+                <label>
+                    <span>Teléfono celular *</span>
+                    <input type="tel" name="phone" required placeholder="987654321">
+                </label>
 
-        <button type="submit" class="btn-submit">Confirmar Reserva</button>
-    </form>
-</main>
+                <label>
+                    <span>Tipo de Reserva *</span>
+                    <select name="booking_type" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Mesa Estándar">Mesa Estándar (Cafetería)</option>
+                        <option value="Espacio Coworking">Espacio Coworking (Conexión de alta velocidad)</option>
+                        <option value="Evento Privado">Zona Lounge (Reuniones)</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Fecha y Hora *</span>
+                    <input type="datetime-local" name="date_time" required>
+                </label>
+
+                <label>
+                    <span>Notas especiales / Alergias</span>
+                    <textarea name="notes" rows="4" placeholder="Cuéntanos si celebras algo especial o tienes requerimientos de dieta..."></textarea>
+                </label>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+
+                <button type="submit" class="submit-btn">Confirmar Reserva</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <p>PERU Chamber of Commerce</p>
-                <p>peru@gmail.com.ph</p>
-                <p>PERU, LIMA City</p>
+                <p>Cafetería Horizonte</p>
+                <p>contacto@horizonte.com</p>
+                <p>Lima, Perú</p>
             </div>
             
             <div class="social-icons">
-                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
-                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
             </div>
             
             <div class="footer-copy">
-                 <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-                <p>Lima, Peru</p>
+                <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Perú</p>
                 <p>Last Update: <span id="lastModified"></span></p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

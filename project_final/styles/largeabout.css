@@ -1,4 +1,3 @@
-/* RESPONSIVE DESIGN (PANTALLAS GRANDES) */
 @media (min-width: 768px) {
     #menu-toggle {
         display: none;
@@ -18,6 +17,7 @@
         margin: 0;
     }
 
+    /* Grilla del Home */
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -26,6 +26,22 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* =========================================================
+       ¡ESTO ES LO QUE FALTA! - Grilla del About para Computadora
+       ========================================================= */
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Divide en 2 columnas elegantes */
+        gap: 2rem; /* Espacio limpio entre tarjetas */
+    }
+
+    /* Hace que la tarjeta de Compromiso Local ocupe todo el ancho abajo */
+    .wide-card {
+        grid-column: 1 / -1; 
+    }
+    /* ========================================================= */
+
+    /* Footer */
     .footer-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

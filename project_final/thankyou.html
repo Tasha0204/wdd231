@@ -3,71 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Registering | Cafeteria horizonte</title>
-    <link rel="stylesheet" href="styles/basejoin.css">
-    <link rel="stylesheet" href="styles/largeindex.css" media="(min-width: 768px)">
+    <title>Reserva Confirmada - Cafetería Horizonte</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <script defer src="scripts/thankyou.js"></script>
 </head>
 <body>
+
     <header>
         <div class="logo-container">
-            <h1 class="header-title">Registration Confirmation</h1>
+            <img src="images/logomarca.png" alt="Cafetería Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafetería Horizonte</p>
         </div>
-        <nav>
-            <ul id="nav-menu" class="show">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html">Back to Join</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section class="thank-you-content" style="max-width: 600px; margin: 2rem auto; text-align: center; padding: 0 1rem;">
-            <h2>Thank you for joining our Cafeteria Horizonte!</h2>
-            <p>We have successfully received your information. Here is a summary of your data:</p>
+        <section class="thankyou-box">
+            <div class="success-icon">✓</div>
+            <h1>¡Reserva Recibida con Éxito!</h1>
+            <p>Gracias por elegirnos. Aquí tienes el resumen de los datos que ingresaste:</p>
             
-            <div id="results" style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ccc; text-align: left; margin-top: 1.5rem;">
-                </div>
+            <div id="results" class="data-display-box">
+                <p class="loading-message">Procesando los datos de la reserva...</p>
+            </div>
+
+            <a href="index.html" class="back-home-btn">Volver al Inicio</a>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 1rem; margin-top: 2rem; border-top: 1px solid #ccc;">
-        <p>&copy; 2026 Cafeteria Horizonte. All rights reserved.</p>
+    <footer>
+        <p>&copy; Cafetería Horizonte | WDD 231 Project</p>
     </footer>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const resultsDiv = document.getElementById('results');
-            
-            const fname = params.get('fname') || 'N/A';
-            const lname = params.get('lname') || 'N/A';
-            const email = params.get('email') || 'N/A';
-            const phone = params.get('phone') || 'N/A';
-            const org = params.get('org') || 'N/A';
-            const title = params.get('org-title') || 'N/A';
-            const membership = params.get('membership') || 'N/A';
-            const timestamp = params.get('timestamp');
-
-            let registrationDate = new Date().toLocaleString();
-            if (timestamp) {
-                const parsedTime = parseInt(timestamp);
-                if (!isNaN(parsedTime)) {
-                    registrationDate = new Date(parsedTime).toLocaleString();
-                } else {
-                    registrationDate = new Date(timestamp).toLocaleString();
-                }
-            }
-
-            resultsDiv.innerHTML = `
-                <p><strong>Name:</strong> ${fname} ${lname}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Organization:</strong> ${org}</p>
-                <p><strong>Job Title:</strong> ${title}</p>
-                <p><strong>Membership Level:</strong> ${membership.toUpperCase()}</p>
-                <p><strong>Registration Date:</strong> ${registrationDate}</p>
-            `;
-        });
-    </script>
 </body>
 </html>

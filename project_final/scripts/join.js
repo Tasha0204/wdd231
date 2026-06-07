@@ -1,52 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    
-    const timestampField = document.getElementById('timestamp');
-    if (timestampField) {
-        timestampField.value = Date.now();
-    }
-
-    const currentYearElement = document.getElementById('currentyear');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
-    }
-
-
-    const lastModifiedElement = document.getElementById('lastModified');
-    if (lastModifiedElement) {
-        lastModifiedElement.textContent = document.lastModified;
-    }
-
-   
+    // Menú hamburguesa responsivo universal
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
-    
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
+        menuToggle.addEventListener('click', () => navMenu.classList.toggle('show'));
     }
 
+    // Fechas automáticas del Footer
+    if (document.getElementById('currentyear')) document.getElementById('currentyear').textContent = new Date().getFullYear();
+    if (document.getElementById('lastModified')) document.getElementById('lastModified').textContent = document.lastModified;
 
-    document.querySelectorAll('.membership-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const modalId = card.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) modal.style.display = "block";
-        });
-    });
-
-    document.querySelectorAll('.close-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const openModal = e.target.closest('.modal');
-            if (openModal) openModal.style.display = "none";
-        });
-    });
-
-
-    window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal')) {
-            e.target.style.display = "none";
-        }
-    });
+    // Graba la fecha/hora actual en el input hidden antes de enviar
+    const timestampInput = document.getElementById('timestamp');
+    if (timestampInput) {
+        timestampInput.value = new Date().toISOString();
+    }
 });

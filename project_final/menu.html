@@ -3,93 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros productos - Cafetería Horizonte</title>
-    <meta name="description" content="Explora nuestro menú de cafés selectos, hamburguesas artesanales y pasteles tradicionales en Cafetería Horizonte.">
+    <title>Nuestro Menú - Cafetería Horizonte</title>
+    <meta name="description" content="Explora nuestra deliciosa carta dinámica. Ofrecemos más de 15 opciones entre cafés selectos, repostería fina y aperitivos artesanales.">
     <meta name="author" content="Tasha Vidal">
-
-    <meta property="og:title" content="Nuestros productos - Cafetería Horizonte">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Explora nuestro menú de cafés selectos, hamburguesas artesanales y pasteles tradicionales.">
-    <meta property="og:image" content="https://tashavidal.github.io/wdd231/project_final/images/logomarca.png">
-    <meta property="og:url" content="https://tashavidal.github.io/wdd231/project_final/">
-
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/basemenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/menu.css">
-    <link rel="stylesheet" href="styles/componentsmenu.css">
-    <script src="scripts/products.js" type="module"></script>
+    <link rel="stylesheet" href="styles/largemenu.css">
+    <script defer src="scripts/menu.js"></script>
 </head>
 <body>
+
     <header>
         <div class="logo-container">
-            <img src="images/logomarca.png" alt="Cafeteria Horizonte Logo" width="80" height="80">
-            <p class="header-title">Cafeteria Horizonte</p>
+            <img src="images/logomarca.png" alt="Cafetería Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafetería Horizonte</p>
         </div>
-        <div class="header-controls">
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                       <li><a href="about.html">About</a></li>
-                    <li><a href="menu.html" class="active">Products</a></li>
-                    <li><a href="join.html">Booking</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html" class="active">Product</a></li>
+                <li><a href="join.html">Booking</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="page-intro">
-            <h1>Explore Our Menu</h1>
-            <p>Discover the perfect flavor for every moment of the day. Choose from our wide variety of fresh and artisanal options.</p>
+        <section class="menu-intro">
+            <h1>Nuestra Carta Artesanal</h1>
+            <p>Selecciona una categoría para filtrar nuestras delicias preparadas al instante.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="Coffee">Coffee</button>
+                <button class="filter-btn" data-filter="Cake">Cake</button>
+                <button class="filter-btn" data-filter="Burger">Burger</button>
+                <button class="filter-btn" data-filter="Sandwich">Sandwich</button>
+            </div>
         </section>
-        
-        <div id="pet-gallery">
-            <div class="filter-controls">
-                <label for="filter">Filter by:</label>
-                <select id="filter" name="filter">
-                    <option value="all">Full Menu</option>
-                    <option value="Coffee">Coffees</option>
-                    <option value="Burger">Burgers</option>
-                    <option value="Sandwich">Sandwiches</option>
-                    <option value="Cake">Cakes</option>
-                </select>
-            </div>
-            <div id="all-pets-grid" class="pet-grid">
-                <p class="loading-message">Loading delicacies...</p>
-            </div>
+
+        <div id="menu-container" class="menu-grid">
+            <p class="loading-message">Preparando la mesa, cargando menú...</p>
         </div>
     </main>
-
-    <dialog id="pet-modal">
-        <div id="modal-content"></div>
-        <button id="modal-close-button" aria-label="Close window">Close</button>
-    </dialog>
 
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <p>PERU Chamber of Commerce</p>
-                <p>peru@gmail.com.ph</p>
-                <p>PERU, LIMA City</p>
+                <p>Cafetería Horizonte</p>
+                <p>contacto@horizonte.com</p>
+                <p>Lima, Perú</p>
             </div>
             
             <div class="social-icons">
-                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook" width="30" height="30"></a>
-                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube" width="30" height="30"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin" width="30" height="30"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
             </div>
             
             <div class="footer-copy">
-                <p>&copy;<span id="currentyear">2026</span> | tashavidal | WDD 231 Project</p>
-                <p>Lima, Peru</p>
-                <p>Last Update: <span id="lastModified">01/06/2026</span></p>
+                <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Perú</p>
+                <p>Last Update: <span id="lastModified"></span></p>
             </div>
         </div>
     </footer>
+
+    <div id="product-modal" class="custom-modal-overlay">
+        <div class="modal-box">
+            <h2 id="modal-title">Nombre del Producto</h2>
+            <p id="modal-text">Descripción extendida de la acción.</p>
+            <p id="modal-price" class="modal-price-tag">S/. 0.00</p>
+            <button id="modal-close-btn" class="modal-close-button">Entendido</button>
+        </div>
+    </div>
+
 </body>
 </html>

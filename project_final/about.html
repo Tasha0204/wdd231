@@ -3,94 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafeteria horizonte</title>
-    <meta name="description" content="Homepage of my Chamber of Commerce project. Here you'll find local businesses, upcoming events, and the weather in our hometown.">
+    <title>About Us - Cafetería Horizonte</title>
+    <meta name="description" content="Conoce la historia, misión y visión de Cafetería Horizonte. Nuestro compromiso con la excelencia técnica y el desarrollo local.">
     <meta name="author" content="Tasha Vidal">
-    <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Chamber of Commerce - Connecting Local Businesses">
-    <meta property="og:description" content="Discover professional networking opportunities, upcoming events, and business spotlights at the Chamber of Commerce.">
-    <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
-    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/baseabout.css">
-    <script defer src="scripts/mainindex.js"></script>
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/largeabout.css">
+    <script defer src="scripts/about.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="images/logomarca.png" alt="Chamber of Commerce Logo" width="80" height="80">
-            <p class="header-title">Cafeteria Horizonte</p>
+            <img src="images/logomarca.png" alt="Cafetería Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafetería Horizonte</p>
         </div>
         <nav>
             <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
             <ul id="nav-menu">
-                <li><a href="index.html" >Home</a></li>
-                 <li><a href="about.html"class="active">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="menu.html">Product</a></li>
                 <li><a href="join.html">Booking</a></li>
-               
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1 class="page-title">Sobre Nosotros</h1>
+        <section class="about-hero">
+            <h1>Nuestra Historia</h1>
+            <p>Descubre nuestro compromiso con la excelencia y la pasión por el café artesanal.</p>
+        </section>
 
-        <!-- Contenedor Grid que ya creaste en tu CSS -->
-        <div class="grid-container about-page">
-            
-            <!-- Bloque de Misión -->
-            <section class="about-card">
-                <div class="about-icon">🎯</div>
-                <h2>Nuestra Misión</h2>
-                <p>
-                    Ofrecer soluciones web innovadoras y de alta calidad que impulsen el éxito digital 
-                    de nuestros clientes. Nos comprometemos con la excelencia técnica, el diseño intuitivo 
-                    y el desarrollo de proyectos accesibles que generen un impacto positivo en nuestra comunidad.
-                </p>
-            </section>
+        <div id="visit-message" class="visit-box"></div>
 
-            <!-- Bloque de Visión -->
-            <section class="about-card">
-                <div class="about-icon">👁️‍🗨️</div>
-                <h2>Nuestra Visión</h2>
-                <p>
-                    Ser un referente líder en el desarrollo web, reconocidos por nuestra capacidad de 
-                    transformar ideas complejas en experiencias digitales extraordinarias. Buscamos evolucionar 
-                    constantemente con las últimas tecnologías para guiar a nuestros socios hacia el futuro digital.
-                </p>
-            </section>
+       <div class="about-grid">
+            <article class="about-card unique-layout">
+                <div class="card-header">
+                    <img src="images/mision.png" alt="Icono de Misión" class="card-icon" width="40" height="40">
+                    <h2>Nuestra Misión</h2>
+                </div>
+                <p>Ser tu socio tecnológico y gastronómico ideal en el desarrollo de soluciones web innovadoras y experiencias culinarias excepcionales, manteniendo siempre un fuerte compromiso con la excelencia técnica y el desarrollo de nuestra comunidad.</p>
+            </article>
 
+            <article class="about-card">
+                <div class="card-header">
+                    <img src="images/vision.png" alt="Icono de Visión" class="card-icon" width="40" height="40">
+                    <h2>Nuestra Visión</h2>
+                </div>
+                <p>Consolidarnos como un referente de innovación, calidad y calidez, expandiendo nuestro horizonte digital y presencial para conectar a las personas a través del mejor café artesanal y la tecnología de vanguardia.</p>
+            </article>
+
+            <article class="about-card wide-card">
+                <div class="card-header">
+                    <img src="images/comunidad.png" alt="Icono de Comunidad" class="card-icon" width="40" height="40">
+                    <h2>Compromiso Local</h2>
+                </div>
+                <p>Trabajamos de la mano con caficultores locales para asegurar un comercio justo y granos de la más alta calidad seleccionados a mano. Cada taza servida en Cafetería Horizonte apoya directamente al crecimiento de familias productoras de la región.</p>
+            </article>
         </div>
     </main>
 
-  <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>PERU Chamber of Commerce</p>
-            <p>peru@gmail.com.ph</p>
-            <p>PERU, LIMA City</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>Cafetería Horizonte</p>
+                <p>contacto@horizonte.com</p>
+                <p>Lima, Perú</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Perú</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
-        </div>
-        
-        <div class="footer-copy">
-             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-            <p>Lima, Peru</p>
-            <p>Last Update: <span id="lastModified"></span></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

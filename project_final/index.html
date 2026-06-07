@@ -3,41 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Cofateria horizonte</title>
-    <meta name="description" content="Homepage of my Chamber of Commerce project. Here you'll find local businesses, upcoming events, and the weather in our hometown.">
+    <title>Cafetería Horizonte - Bienvenidos</title>
+    <meta name="description" content="Bienvenidos a Cafetería Horizonte. Disfruta de nuestros cafés selectos, hamburguesas artesanales y repostería tradicional en Lima.">
     <meta name="author" content="Tasha Vidal">
     
-    <link rel="icon" href="favicon.ico" type="image/logofavicon.ico">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Chamber of Commerce - Connecting Local Businesses">
-    <meta property="og:description" content="Discover professional networking opportunities, upcoming events, and business spotlights at the Chamber of Commerce.">
-    <meta property="og:image" content="https://tasha0204.github.io/wdd231/chamber/images/lima.webp">
-    <meta property="og:url" content="https://tasha0204.github.io/wdd231/chamber/index.html">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <meta property="og:title" content="Cafetería Horizonte - El mejor sabor de Lima">
+    <meta property="og:description" content="Explora nuestro menú artesanal y realiza tu reserva en línea de forma rápida.">
+    <meta property="og:image" content="images/logomarca.png">
+    <meta property="og:url" content="https://tashavidal.github.io/wdd231/project_final/index.html">
     
+    <link rel="stylesheet" href="styles/base.css">
+     <link rel="stylesheet" href="styles/large.css">
     <script defer src="scripts/mainindex.js"></script>
-    <script defer src="scripts/promotions.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="images/logomarca.png" alt="Chamber of Commerce Logo" width="80" height="80">
-            <p class="header-title">Cafeteria Horizonte</p>
+            <img src="images/logomarca.png" alt="Cafetería Horizonte Logo" width="80" height="80">
+            <p class="header-title">Cafetería Horizonte</p>
         </div>
         <nav>
             <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                 <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Product</a></li>
                 <li><a href="join.html">Booking</a></li>
             </ul>
@@ -45,50 +41,39 @@
     </header>
 
     <main>
-        <h1 class="main-title">Welcome</h1>
+        <h1 class="visually-hidden">Cafetería Horizonte - Inicio</h1>
 
         <section class="hero-section">
-            <picture>
-                <source srcset="images/cofee.png" media="(min-width: 768px)">
-                <img src="images/hero.jpg" alt="Panoramic city view and professional business environment" class="hero-image" width="1200" height="500">
-            </picture>
+            <img src="https://tasha0204.github.io/wdd231/chamber/images/lima.webp" alt="Cafetería Horizonte Ambiente" class="hero-image" width="1200" height="650">
             <div class="cta-overlay">
-                <h2>Grow Your Business Today</h2>
-                <p>Join the largest professional network in the region.</p>
-                <a href="join.html" class="cta-button">Join the Chamber!</a>
+                <h2>Bienvenidos a Cafetería Horizonte</h2>
+                <p>El punto de encuentro perfecto para disfrutar del mejor café artesanal y delicias preparadas al momento en Lima.</p>
+                <a href="join.html" class="cta-button">Reservar una Mesa</a>
             </div>
         </section>
 
         <div class="grid-container">
             
             <section class="events-card">
-                <h3>Upcoming Events</h3>
-                <div class="event-item">
-                    <h4>Networking Conference 2026</h4>
-                    <p>📅 May 28 | 🕒 6:00 PM</p>
-                    <p>Connect with over 50 local startups and established enterprises.</p>
-                </div>
-                <div class="event-item">
-                    <h4>Digital Marketing Workshop</h4>
-                    <p>📅 June 05 | 🕒 4:00 PM</p>
-                    <p>Learn actionable SEO optimization and digital ad strategies.</p>
-                </div>
+                <h2>Próximos Eventos</h2>
+                <p>☕ <strong>Noches de Música en Vivo:</strong> Todos los viernes a las 7:00 PM disfruta de artistas locales mientras degustas tu café favorito.</p>
+                <p style="margin-top: 1rem;">🎨 <strong>Taller de Arte y Latte:</strong> Sábado por la tarde. Aprende los secretos básicos del barismo con nuestros expertos.</p>
             </section>
 
             <section class="weather-card">
-                <h3>Current Weather</h3>
+                <h2>El Clima en Lima</h2>
                 <div id="weather-current">
-                    <p>Loading current weather data...</p>
+                    <p class="loading-message">Cargando clima actual...</p>
                 </div>
-                <h4>3-Day Forecast</h4>
+                <h3>Pronóstico Semanal</h3>
                 <div id="weather-forecast" class="forecast-container">
                     </div>
             </section>
 
-            <section class="spotlight-section">
-                <h3>Promotions</h3>
+            <section class="spotlight-section" style="grid-column: 1 / -1;">
+                <h2>Sugerencias del Chef (Destacados del Día)</h2>
                 <div id="promotions-container" class="spotlight-grid">
-                    <p>Loading spotlight promotions...</p>
+                    <p class="loading-message">Cargando las delicias del día...</p>
                 </div>
             </section>
 
@@ -96,25 +81,26 @@
     </main>
 
     <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>PERU Chamber of Commerce</p>
-            <p>peru@gmail.com.ph</p>
-            <p>PERU, LIMA City</p>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>Cafetería Horizonte</p>
+                <p>contacto@horizonte.com</p>
+                <p>Lima, Perú</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Perú</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page" width="30" height="30"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Visit our Youtube page" width="30" height="30"></a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Visit our Linkedin page" width="30" height="30"></a>
-        </div>
-        
-        <div class="footer-copy">
-             <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-            <p>Lima, Peru</p>
-            <p>Last Update: <span id="lastModified"></span></p>
-        </div>
-    </div>
-</footer>
+    </footer>
+
 </body>
 </html>
