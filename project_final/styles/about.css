@@ -1,4 +1,4 @@
-/* Sección Hero del About */
+
 .about-hero {
     text-align: center;
     background-color: var(--primary-color);
@@ -14,7 +14,6 @@
     margin-bottom: 0.5rem;
 }
 
-/* Caja del mensaje de LocalStorage */
 .visit-box {
     background-color: var(--white);
     border-left: 5px solid var(--secondary-color);
@@ -30,12 +29,11 @@
 .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Espacio entre el icono y el texto */
+    gap: 1rem; 
     margin-bottom: 1.2rem;
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 0.5rem;
 }
-
 
 .card-icon {
     width: 40px;
@@ -44,11 +42,6 @@
     filter: sepia(0.6) saturate(150%) hue-rotate(340deg) brightness(90%);
 }
 
-.about-card h2 {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
 .about-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -66,7 +59,9 @@
 .about-card h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .about-card p {
