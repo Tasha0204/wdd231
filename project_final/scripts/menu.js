@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Menú Hamburguesa universal
+    // Universal Hamburger Menu
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => navMenu.classList.toggle('show'));
     }
 
-    // Fechas automáticas del pie de página
+    // Automatic footer dates
     if (document.getElementById('currentyear')) document.getElementById('currentyear').textContent = new Date().getFullYear();
     if (document.getElementById('lastModified')) document.getElementById('lastModified').textContent = document.lastModified;
 
-    // Ejecutar la carga asíncrona de los datos
+    // Execute asynchronous data loading
     fetchAndRenderMenu();
 });
 
@@ -21,21 +21,21 @@ async function fetchAndRenderMenu() {
     if (!container) return;
 
     try {
-        // Carga asíncrona local mediante fetch y try/catch (Requisito Item 12)
+        // Asynchronous local loading via fetch and try/catch
         const response = await fetch('data/product.json');
-        if (!response.ok) throw new Error('No se pudo leer el archivo JSON.');
+        if (!response.ok) throw new Error('Could not read the JSON file.');
         
         allProducts = await response.json();
         
-        // Mostrar todos al iniciar
+        // Show all at start
         displayItems(allProducts);
         
-        // Activar los botones de filtro
+        // Activate filter buttons
         setupFilterButtons();
 
     } catch (error) {
-        console.error('Error detectado:', error);
-        container.innerHTML = `<p class="loading-message" style="color: red;">Error al cargar el menú. Asegúrate de que tu JSON real esté guardado en data/product.json</p>`;
+        console.error('Error detected:', error);
+        container.innerHTML = `<p class="loading-message" style="color: red;">Error loading the menu. Make sure your actual JSON is saved in data/product.json</p>`;
     }
 }
 
@@ -44,18 +44,18 @@ function displayItems(productsList) {
     container.innerHTML = ""; 
 
     if (!productsList || productsList.length === 0) {
-        container.innerHTML = `<p class="loading-message">No hay productos disponibles en esta sección.</p>`;
+        container.innerHTML = `<p class="loading-message">No products available in this section.</p>`;
         return;
     }
 
-    // Renderizado dinámico usando Template Literals (Item 11) y tus propiedades reales (.category, .tags, etc.)
+    // Dynamic rendering using Template Literals
     productsList.forEach(product => {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
         
         productCard.innerHTML = `
             <div class="product-image-wrapper">
-                <img src="${product.imageUrl}" alt="Fotografía de ${product.name}" class="product-img" loading="lazy" width="300" height="200">
+                <img src="${product.imageUrl}" alt="Photograph of ${product.name}" class="product-img" loading="lazy" width="300" height="200">
                 <span class="product-tag">${product.tags}</span>
             </div>
             <div class="product-details">
@@ -64,14 +64,14 @@ function displayItems(productsList) {
                 <p class="product-desc">${product.description}</p>
                 <div class="product-footer">
                     <span class="product-price">${product.price}</span>
-                    <button class="order-btn" data-id="${product.id}">Detalles</button>
+                    <button class="order-btn" data-id="${product.id}">Details</button>
                 </div>
             </div>
         `;
         container.appendChild(productCard);
     });
 
-    // Control de clics para abrir la ventana modal real (Item 10)
+    // Click control to open the actual modal window
     const orderButtons = container.querySelectorAll('.order-btn');
     orderButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -97,7 +97,7 @@ function setupFilterButtons() {
             if (filterValue === 'all') {
                 displayItems(allProducts);
             } else {
-                // Compara directo con tus campos en minúsculas evitando fallos
+                // Direct comparison with your fields in lowercase to avoid errors
                 const filtered = allProducts.filter(item => 
                     item.category.toLowerCase() === filterValue.toLowerCase()
                 );
@@ -116,8 +116,8 @@ function openProductModal(product) {
     if (!modal || !modalTitle || !modalText || !modalPrice) return;
 
     modalTitle.textContent = product.name;
-    modalText.textContent = `¡Excelente elección! Este delicioso plato de nuestra categoría ${product.category} (${product.type}) está preparado con los más selectos ingredientes locales. Puedes solicitarlo de manera prioritaria al confirmar tu asistencia en nuestra pestaña de Booking.`;
-    modalPrice.textContent = `Precio: ${product.price}`;
+    modalText.textContent = `Excellent choice! This delicious dish from our ${product.category} (${product.type}) category is prepared with the finest local ingredients. You can request it as a priority by confirming your attendance in our Booking tab.`;
+    modalPrice.textContent = `Price: ${product.price}`;
 
     modal.classList.add('modal-show');
 

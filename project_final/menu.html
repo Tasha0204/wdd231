@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Menú - Cafetería Horizonte</title>
-    <meta name="description" content="Explora nuestra deliciosa carta dinámica. Ofrecemos más de 15 opciones entre cafés selectos, repostería fina y aperitivos artesanales.">
+    <title>Our Menu - Horizonte Coffee Shop</title>
+    <meta name="description" content="Explore our delicious dynamic menu. We offer over 15 options including select coffees, fine pastries, and artisanal appetizers.">
     <meta name="author" content="Tasha Vidal">
     
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Nuestro Menú Artesanal - Cafetería Horizonte">
-    <meta property="og:description" content="Explora nuestra carta dinámica: cafés selectos, hamburguesas premium, sándwiches y postres artesanales en Lima.">
+    <meta property="og:title" content="Our Artisanal Menu - Horizonte Coffee Shop">
+    <meta property="og:description" content="Explore our dynamic menu: select coffees, premium burgers, sandwiches, and artisanal desserts in Lima.">
     <meta property="og:image" content="https://tasha0204.github.io/wdd231/project_final/images/logocafe.png">
     <meta property="og:url" content="https://tasha0204.github.io/wdd231/project_final/menu.html">
     <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/basemenu.css">
     <link rel="stylesheet" href="styles/menu.css">
     <link rel="stylesheet" href="styles/largemenu.css">
     <script defer src="scripts/menu.js"></script>
@@ -26,8 +26,8 @@
 
     <header>
         <div class="logo-container">
-            <img src="images/logocafe.png" alt="Cafetería Horizonte Logo" width="80" height="80">
-            <p class="header-title">Cafetería Horizonte</p>
+            <img src="images/logocafe.png" alt="Horizonte Coffee Shop Logo" width="80" height="80">
+            <p class="header-title">Horizonte Coffee Shop</p>
         </div>
         <nav>
             <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
@@ -42,11 +42,11 @@
 
     <main>
         <section class="menu-intro">
-            <h1>Nuestra Carta Artesanal</h1>
-            <p>Selecciona una categoría para filtrar nuestras delicias preparadas al instante.</p>
+            <h1>Our Artisanal Menu</h1>
+            <p>Select a category to filter our freshly prepared delights.</p>
             
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="Coffee">Coffee</button>
                 <button class="filter-btn" data-filter="Cake">Cake</button>
                 <button class="filter-btn" data-filter="Burger">Burger</button>
@@ -55,16 +55,16 @@
         </section>
 
         <div id="menu-container" class="menu-grid">
-            <p class="loading-message">Preparando la mesa, cargando menú...</p>
+            <p class="loading-message">Setting the table, loading menu...</p>
         </div>
     </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <p>Cafetería Horizonte</p>
+                <p>Horizonte Coffee Shop</p>
                 <p>contacto@horizonte.com</p>
-                <p>Lima, Perú</p>
+                <p>Lima, Peru</p>
             </div>
             
             <div class="social-icons">
@@ -75,7 +75,7 @@
             
             <div class="footer-copy">
                 <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
-                <p>Lima, Perú</p>
+                <p>Lima, Peru</p>
                 <p>Last Update: <span id="lastModified"></span></p>
             </div>
         </div>
@@ -83,10 +83,10 @@
 
     <div id="product-modal" class="custom-modal-overlay">
         <div class="modal-box">
-            <h2 id="modal-title">Nombre del Producto</h2>
-            <p id="modal-text">Descripción extendida de la acción.</p>
+            <h2 id="modal-title">Product Name</h2>
+            <p id="modal-text">Extended product description.</p>
             <p id="modal-price" class="modal-price-tag">S/. 0.00</p>
-            <button id="modal-close-btn" class="modal-close-button">Entendido</button>
+            <button id="modal-close-btn" class="modal-close-button">Understood</button>
         </div>
     </div>
 

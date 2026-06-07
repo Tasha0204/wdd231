@@ -28,13 +28,13 @@ function controlUserVisits() {
     const lastVisit = localStorage.getItem('lastAboutVisit');
     const now = Date.now();
 
-    // Save the current visit
+  
     localStorage.setItem('lastAboutVisit', now);
 
     if (!lastVisit) {
         visitDisplay.textContent = "Welcome to our story page! Thanks for visiting us for the first time.";
     } else {
-        // Calculate the difference in days
+
         const differenceInTime = now - parseInt(lastVisit);
         const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
 
