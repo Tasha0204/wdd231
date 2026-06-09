@@ -1,0 +1,51 @@
+/* --- Diseño Responsivo (Mobile View) --- */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        background-color: var(--primary-brown);
+        border-bottom: 4px solid var(--accent-orange);
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 0;
+        border-radius: 0;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container {
+        display: none; /* Oculta la imagen en móviles para ahorrar espacio */
+    }
+
+    .final-contact {
+        grid-column: span 1;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

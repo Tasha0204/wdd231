@@ -38,7 +38,6 @@ body {
     border: 0;
 }
 
-/* HEADER & NAVEGACIÓN */
 header {
     background-color: var(--primary-color);
     color: var(--white);

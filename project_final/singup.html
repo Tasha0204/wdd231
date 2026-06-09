@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Horizonte Coffee Shop</title>
+    <meta name="description" content="Create your account at Horizonte Coffee Shop to access exclusive benefits, manage your bookings, and join our community of coffee lovers in Lima, Peru.">
+    <meta name="author" content="Tasha Vidal">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="Sign Up - Horizonte Coffee Shop">
+    <meta property="og:description" content="Create your account at Horizonte Coffee Shop to access exclusive benefits, manage your bookings, and join our community of coffee lovers in Lima, Peru.">
+    <meta property="og:image" content="https://tasha0204.github.io/wdd231/project_final/images/logocafe.webp">
+    <meta property="og:url" content="https://tasha0204.github.io/wdd231/project_final/register.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles/largeregister.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logocafe.webp" alt="Horizonte Coffee Shop Logo" width="80" height="80">
+            <p class="header-title">Horizonte Coffee Shop</p>
+        </div>
+        <nav>
+            <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Product</a></li>
+                <li><a href="join.html">Booking</a></li>
+                <li><a href="singup.html" class="active">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-contact">
+        <section class="contact-box">
+            <div class="image-container">
+                <img src="images/register2.webp" alt="Join our community">
+            </div>
+            
+            <div class="form-container">
+                <form action="register-user" method="post">
+                    <h1>Create Account</h1>
+                    <p class="form-subtitle">Join us to start your next project</p>
+                    <ul>
+                        <li>
+                            <label for="fname">Full Name:</label>
+                            <input type="text" id="fname" name="full_name" placeholder="Tasha Vidal" required>
+                        </li>
+                        <li>
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="user_email" placeholder="example@mail.com" required>
+                        </li>
+                        <li>
+                            <label for="pass">Password:</label>
+                            <input type="password" id="pass" name="user_password" required>
+                        </li>
+                        <li>
+                            <label for="pass-confirm">Confirm Password:</label>
+                            <input type="password" id="pass-confirm" name="password_confirm" required>
+                        </li>
+                        <li>
+                            <button type="submit">Sign Up Now</button>
+                        </li>
+                    </ul>
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="login.html">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="final-contact">
+                <h2>Build your future with Horizonte Coffee Shop</h2>
+                <p>Register today and get access to modern web development solutions.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>Horizonte Coffee Shop</p>
+                <p>contacto@horizonte.com</p>
+                <p>Lima, Peru</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy;<span id="currentyear"></span> | tashavidal | WDD 231 Project</p>
+                <p>Lima, Peru</p>
+                <p>Last Update: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/register.js" defer></script>
+</body>
+
+</html>
