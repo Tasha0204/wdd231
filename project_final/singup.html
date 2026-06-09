@@ -20,6 +20,8 @@
     
     <link rel="stylesheet" href="styles/largeregister.css">
     <link rel="stylesheet" href="styles/contact.css">
+    
+    <script src="scripts/register.js" defer></script>
 </head>
 
 <body>
@@ -43,13 +45,13 @@
     <main class="container-contact">
         <section class="contact-box">
             <div class="image-container">
-                <img src="images/register2.webp" alt="Join our community">
+                <img src="images/register2.webp" alt="Join our coffee community">
             </div>
             
             <div class="form-container">
                 <form action="register-user" method="post">
                     <h1>Create Account</h1>
-                    <p class="form-subtitle">Join us to start your next project</p>
+                    <p class="form-subtitle">Join us to start your coffee journey</p>
                     <ul>
                         <li>
                             <label for="fname">Full Name:</label>
@@ -61,11 +63,11 @@
                         </li>
                         <li>
                             <label for="pass">Password:</label>
-                            <input type="password" id="pass" name="user_password" required>
+                            <input type="password" id="pass" name="user_password" minlength="8" required>
                         </li>
                         <li>
                             <label for="pass-confirm">Confirm Password:</label>
-                            <input type="password" id="pass-confirm" name="password_confirm" required>
+                            <input type="password" id="pass-confirm" name="password_confirm" minlength="8" required>
                         </li>
                         <li>
                             <button type="submit">Sign Up Now</button>
@@ -79,7 +81,7 @@
 
             <div class="final-contact">
                 <h2>Build your future with Horizonte Coffee Shop</h2>
-                <p>Register today and get access to modern web development solutions.</p>
+                <p>Register today and get access to exclusive benefits, events, and community rewards.</p>
             </div>
         </section>
     </main>
@@ -93,9 +95,9 @@
             </div>
             
             <div class="social-icons">
-                <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
-                <a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="Linkedin" width="30" height="30"></a>
             </div>
             
             <div class="footer-copy">
@@ -105,7 +107,5 @@
             </div>
         </div>
     </footer>
-    <script src="scripts/register.js" defer></script>
 </body>
-
 </html>
