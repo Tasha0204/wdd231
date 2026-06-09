@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #5C3A21; 
-    --secondary-color: #ff9900;
-    --secondary-hover: #e68a00;
-    --text-color: #333333;
-    --light-bg: #FDFBF7;
+    --primary-color: #5C3A21;       /* Marrón oscuro elegante */
+    --secondary-color: #D67A00;     /* Ámbar/Naranja seguro para contraste AA */
+    --secondary-hover: #B05F00;     /* Tono para hover */
+    --text-color: #2D2D2D;          /* Oscurecido para lectura óptima */
+    --light-bg: #FDFBF7;            /* Crema suave */
     --white: #ffffff;
     --border-color: #dddddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid var(--secondary-color); 
+    border-bottom: 5px solid var(--primary-color); /* Borde marrón a juego con el botón */
     position: relative;
     z-index: 10;
 }
@@ -104,7 +104,7 @@ header {
 
 #nav-menu li a.active, #nav-menu li a:hover {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--white);
     border-radius: 4px;
 }
 
@@ -128,7 +128,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.75); /* Ligeramente más oscuro para que el texto resalte */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,20 +143,20 @@ header {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--white);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 .cta-overlay p {
-    font-size: 1.1rem; 
+    font-size: 1.15rem; 
     max-width: 600px;
     margin-bottom: 1.5rem;
-    color: #f0f0f0; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 .cta-button {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color); /* Botón marrón sólido y elegante */
+    color: var(--white);                    /* Texto blanco contrastado */
     padding: 0.8rem 2rem;
     text-decoration: none;
     font-weight: 700; 
@@ -165,7 +165,7 @@ header {
 }
 
 .cta-button:hover {
-    background-color: var(--secondary-hover);
+    background-color: #3d2616; /* Tono marrón más oscuro al pasar el mouse, sin moverse */
 }
 
 main {
@@ -188,7 +188,7 @@ section {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease; /* Transición suave de sombra, sin salto de posición */
     cursor: pointer;
 }
 
@@ -201,8 +201,7 @@ section h2 {
 }
 
 section:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Solo se intensifica la sombra de forma fija */
 }
 
 .mt-1 { margin-top: 1rem; }
@@ -225,18 +224,16 @@ section:hover {
 }
 
 .spotlight-grid div {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    transition: box-shadow 0.3s ease;
 }
 
 .spotlight-grid div:hover {
-    transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .loading-message {
     font-style: italic;
-    color: #222222; 
+    color: #333333; 
     text-align: center;
     grid-column: 1 / -1;
     font-weight: 600;
