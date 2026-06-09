@@ -186,11 +186,10 @@ nav ul li a.active {
 }
 
 .form-footer a {
-    color: var(--accent-orange);
-    text-decoration: none;
+    color: var(--primary-brown); 
+    text-decoration: underline;  
     font-weight: 600;
 }
-
 .form-footer a:hover {
     text-decoration: underline;
 }
