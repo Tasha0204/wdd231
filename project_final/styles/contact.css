@@ -1,4 +1,4 @@
-/* --- Variables de Color y Tipografía --- */
+
 :root {
     --primary-brown: #573826;
     --accent-orange: #f29f05;
@@ -10,7 +10,7 @@
     --font-body: 'Poppins', sans-serif;
 }
 
-/* --- Reseteo y Estilos Base --- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -85,7 +85,7 @@ nav ul li a.active {
     cursor: pointer;
 }
 
-/* --- Main Layout --- */
+
 .container-contact {
     flex: 1;
     padding: 40px 20px;
@@ -223,9 +223,9 @@ footer {
 
 .footer-container {
     width: 100%;
-    max-width: 100%; /* Hacemos que ocupe todo el ancho disponible */
-    padding-left: 0px;  /* Separación del borde izquierdo */
-    padding-right: 0px; /* Separación del borde derecho */
+    max-width: 100%; 
+    padding-left: 0px;  
+    padding-right: 0px; 
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

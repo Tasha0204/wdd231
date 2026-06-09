@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Responsive Hamburger Menu
+
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     
@@ -10,17 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Automatic Footer Dates
+
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
-    // 3. Stable weather simulation data
     loadWeatherData();
 
-    // 4. Asynchronous product loading using FETCH and ASYNC/AWAIT (Rubric Item 12)
     loadFeaturedProducts();
 });
 
@@ -37,7 +34,7 @@ function loadWeatherData() {
     }
 
     if (forecastContainer) {
-        // Option using standard emojis (No extra setup needed)
+
         forecastContainer.innerHTML = `
             <div class="forecast-day" style="background: var(--light-bg); padding: 0.8rem; border-radius: 6px; text-align: center; flex: 1;">
                 <p><strong>Mon</strong></p>
@@ -64,19 +61,17 @@ async function loadFeaturedProducts() {
     if (!promoContainer) return;
 
     try {
-        // Fetch directly from your existing products JSON file
+
         const response = await fetch('data/product.json');
         if (!response.ok) throw new Error('Could not load products.');
         
         const products = await response.json();
 
-        // Shuffle and select 3 random products for the Home page
         const shuffled = products.sort(() => 0.5 - Math.random());
         const featured = shuffled.slice(0, 3);
 
-        promoContainer.innerHTML = ''; // Clear loading message
+        promoContainer.innerHTML = ''; 
 
-        // Insert cards using Template Literals (Rubric Item 11)
         featured.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('spotlight-card');

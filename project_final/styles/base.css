@@ -242,7 +242,7 @@ section:hover {
     grid-column: 1 / -1;
 }
 
-/* FOOTER */
+
 footer {
     background-color: var(--primary-color);
     color: var(--white);

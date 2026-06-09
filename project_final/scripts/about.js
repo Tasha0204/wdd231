@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Responsive Hamburger Menu
+
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     
@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Automatic Footer Dates
+
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
-    // 3. User Visit Tracking System with LocalStorage (Rubric Criterion 9)
+   
     controlUserVisits();
 });
 

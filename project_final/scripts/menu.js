@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Universal Hamburger Menu
+  
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => navMenu.classList.toggle('show'));
     }
 
-    // Automatic footer dates
     if (document.getElementById('currentyear')) document.getElementById('currentyear').textContent = new Date().getFullYear();
     if (document.getElementById('lastModified')) document.getElementById('lastModified').textContent = document.lastModified;
 
-    // Execute asynchronous data loading
     fetchAndRenderMenu();
 });
 
@@ -21,16 +19,15 @@ async function fetchAndRenderMenu() {
     if (!container) return;
 
     try {
-        // Asynchronous local loading via fetch and try/catch
+     
         const response = await fetch('data/product.json');
         if (!response.ok) throw new Error('Could not read the JSON file.');
         
         allProducts = await response.json();
         
-        // Show all at start
+
         displayItems(allProducts);
         
-        // Activate filter buttons
         setupFilterButtons();
 
     } catch (error) {
@@ -97,7 +94,7 @@ function setupFilterButtons() {
             if (filterValue === 'all') {
                 displayItems(allProducts);
             } else {
-                // Direct comparison with your fields in lowercase to avoid errors
+        
                 const filtered = allProducts.filter(item => 
                     item.category.toLowerCase() === filterValue.toLowerCase()
                 );

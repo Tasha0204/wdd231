@@ -1,4 +1,4 @@
-/* --- Diseño Responsivo (Mobile View) --- */
+
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -37,7 +37,7 @@
     }
 
     .image-container {
-        display: none; /* Oculta la imagen en móviles para ahorrar espacio */
+        display: none; 
     }
 
     .final-contact {
