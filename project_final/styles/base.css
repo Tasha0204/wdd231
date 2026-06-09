@@ -1,7 +1,7 @@
 :root {
     --primary-color: #5C3A21; 
     --secondary-color: #ff9900;
-    --secondary-hover: #e68a00;
+    --secondary-hover: #2b1b02;
     --text-color: #333333;
     --light-bg: #FDFBF7;
     --white: #ffffff;
@@ -155,8 +155,8 @@ header {
 }
 
 .cta-button {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 0.8rem 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -168,7 +168,7 @@ header {
     background-color: var(--secondary-hover);
 }
 
-/* LAYOUT PRINCIPAL Y SECCIONES */
+
 main {
     flex-grow: 1;
     padding: 2rem 1rem;
