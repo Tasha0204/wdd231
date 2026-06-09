@@ -27,7 +27,6 @@ body {
     min-height: 100vh;
 }
 
-/* --- Header --- */
 header {
     background-color: var(--primary-brown);
     color: var(--white);
@@ -162,8 +161,8 @@ nav ul li a.active {
 .form-container button[type="submit"] {
     width: 100%;
     padding: 14px;
-    background-color: var(--accent-orange);
-    color: var(--primary-brown);
+    background-color: var(--primary-brown);
+    color: var(--white);
     border: none;
     border-radius: 4px;
     font-family: var(--font-heading);
@@ -175,9 +174,10 @@ nav ul li a.active {
 }
 
 .form-container button[type="submit"]:hover {
-    opacity: 0.9;
+    background-color: #2b1b02;;
+    color: var(--white);
+    
 }
-
 .form-footer {
     margin-top: 20px;
     text-align: center;
@@ -213,7 +213,6 @@ nav ul li a.active {
     opacity: 0.9;
 }
 
-/* --- Footer --- */
 footer {
     background-color: var(--primary-brown);
     color: var(--white);
