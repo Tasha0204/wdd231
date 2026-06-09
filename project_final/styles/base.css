@@ -208,7 +208,12 @@ section:hover {
 .mt-1 { margin-top: 1rem; }
 .full-width { grid-column: 1 / -1; }
 
-/* OTROS ELEMENTOS */
+.precio-item {
+    color: #e67e22; /* Cambia esto por el tono exacto de naranja de tu barra */
+    font-weight: bold; /* Opcional: para que resalte más */
+    margin-top: 10px; /* Usa un margen pequeño y controlado */
+    margin-bottom: 0px; 
+}
 .forecast-container {
     display: flex;
     gap: 1rem;

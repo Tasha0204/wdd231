@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
@@ -34,7 +33,6 @@ function loadWeatherData() {
     }
 
     if (forecastContainer) {
-
         forecastContainer.innerHTML = `
             <div class="forecast-day" style="background: var(--light-bg); padding: 0.8rem; border-radius: 6px; text-align: center; flex: 1;">
                 <p><strong>Mon</strong></p>
@@ -55,13 +53,12 @@ function loadWeatherData() {
     }
 }
 
-// Async block with try/catch required for top JS score
+
 async function loadFeaturedProducts() {
     const promoContainer = document.getElementById('promotions-container');
     if (!promoContainer) return;
 
     try {
-
         const response = await fetch('data/product.json');
         if (!response.ok) throw new Error('Could not load products.');
         
@@ -80,15 +77,14 @@ async function loadFeaturedProducts() {
             card.style.padding = '1rem';
             card.style.backgroundColor = 'var(--white)';
             card.style.textAlign = 'center';
-            
-            card.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)'; 
+            card.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.05)'; 
             
             card.innerHTML = `
                 <img src="${item.imageUrl}" alt="${item.name}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" loading="lazy">
                 <h3 style="margin: 0.5rem 0; color: var(--primary-color);">${item.name}</h3>
                 <p style="font-size: 0.85rem; color: #666; font-style: italic;">${item.type}</p>
                 <p style="font-size: 0.9rem; margin: 0.5rem 0; height: 40px; overflow: hidden;">${item.description}</p>
-                <p style="font-weight: bold; color: var(--secondary-hover); font-size: 1.1rem;">${item.price}</p>
+                <p style="font-weight: bold; color: var(--secondary-color); font-size: 1.1rem; margin-top: 10px;">${item.price}</p>
             `;
             promoContainer.appendChild(card);
         });
