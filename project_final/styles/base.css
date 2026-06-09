@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #5C3A21;      
-    --secondary-color: #D67A00;     
-    --secondary-hover: #B05F00;     
-    --text-color: #2D2D2D;         
-    --light-bg: #FDFBF7;            
+    --primary-color: #5C3A21; 
+    --secondary-color: #ff9900;
+    --secondary-hover: #e68a00;
+    --text-color: #333333;
+    --light-bg: #FDFBF7;
     --white: #ffffff;
     --border-color: #dddddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid var(--primary-color); 
+    border-bottom: 5px solid var(--secondary-color); 
     position: relative;
     z-index: 10;
 }
@@ -128,7 +128,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75); 
+    /* Café oscuro elegante con 70% de opacidad */
+    background: rgba(0, 0, 0, 0.7); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,31 +144,31 @@ header {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--white);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .cta-overlay p {
-    font-size: 1.15rem; 
+    font-size: 1rem;
     max-width: 600px;
     margin-bottom: 1.5rem;
-    color: #ffffff; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .cta-button {
-    background-color: var(--primary-color); 
-    color: var(--white);                  
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     padding: 0.8rem 2rem;
     text-decoration: none;
-    font-weight: 700; 
+    font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #3d2616; 
+    background-color: var(--secondary-hover);
 }
 
+/* LAYOUT PRINCIPAL Y SECCIONES */
 main {
     flex-grow: 1;
     padding: 2rem 1rem;
@@ -188,7 +189,7 @@ section {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px var(--shadow-color);
-    transition: box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
@@ -201,7 +202,8 @@ section h2 {
 }
 
 section:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .mt-1 { margin-top: 1rem; }
@@ -224,20 +226,22 @@ section:hover {
 }
 
 .spotlight-grid div {
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .spotlight-grid div:hover {
+    transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .loading-message {
     font-style: italic;
-    color: #333333; 
+    color: #555555;
     text-align: center;
     grid-column: 1 / -1;
-    font-weight: 600;
 }
+
 
 footer {
     background-color: var(--primary-color);
@@ -268,4 +272,3 @@ footer {
 .social-icons img:hover {
     transform: scale(1.2);
 }
-
